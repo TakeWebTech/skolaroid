@@ -1,0 +1,25 @@
+{
+  "name": "smls",
+  "private": true,
+  "version": "0.0.0",
+  "description": "SMLS production monorepo",
+  "scripts": {
+    "frontend:dev": "pnpm --dir frontend dev",
+    "frontend:build": "pnpm --dir frontend build",
+    "backend:dev": "pnpm --dir backend dev",
+    "backend:build": "pnpm --dir backend build",
+    "backend:test": "pnpm --dir backend test",
+    "backend:typecheck": "pnpm --dir backend typecheck",
+    "backend:prisma:generate": "pnpm --dir backend prisma:generate",
+    "backend:prisma:validate": "pnpm --dir backend prisma:validate",
+    "backend:migrate:deploy": "pnpm --dir backend exec prisma migrate deploy",
+    "backend:migrate:status": "pnpm --dir backend exec prisma migrate status",
+    "backend:seed:dev": "pnpm --dir backend seed:dev",
+    "audit:check": "node scripts/check-product-registries.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "packageManager": "pnpm@11.5.3"
+}

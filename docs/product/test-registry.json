@@ -1,0 +1,3082 @@
+[
+  {
+    "id": "test-screen-signin-login-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-signin",
+    "requirement": "login validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-signin-failed-login-error",
+    "sourceType": "screen",
+    "sourceId": "screen-signin",
+    "requirement": "failed login error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-signin-sso-start",
+    "sourceType": "screen",
+    "sourceId": "screen-signin",
+    "requirement": "SSO start",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-signin-password-reset",
+    "sourceType": "screen",
+    "sourceId": "screen-signin",
+    "requirement": "password reset",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-signin-redirect-by-authenticated-role",
+    "sourceType": "screen",
+    "sourceId": "screen-signin",
+    "requirement": "redirect by authenticated role",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-dashboard-dashboard-renders-from-api-data",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-dashboard",
+    "requirement": "dashboard renders from API data",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-dashboard-empty-classes-state",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-dashboard",
+    "requirement": "empty classes state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-dashboard-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-dashboard",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-dashboard-quick-action-navigation",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-dashboard",
+    "requirement": "quick action navigation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-classes-class-list-loading",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-classes",
+    "requirement": "class list loading",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-classes-empty-class-list",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-classes",
+    "requirement": "empty class list",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-classes-open-class-navigation",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-classes",
+    "requirement": "open class navigation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-classes-attendance-action-visibility",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-classes",
+    "requirement": "attendance action visibility",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-attendance-status-update",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-attendance",
+    "requirement": "status update",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-attendance-mark-all-present",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-attendance",
+    "requirement": "mark all present",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-attendance-submit-success",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-attendance",
+    "requirement": "submit success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-attendance-submit-error",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-attendance",
+    "requirement": "submit error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-attendance-offline-draft",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-attendance",
+    "requirement": "offline draft",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-attendance-audit-log-created",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-attendance",
+    "requirement": "audit log created",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-learning-select-unit",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-learning",
+    "requirement": "select unit",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-learning-save-draft-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-learning",
+    "requirement": "save draft validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-learning-publish-success",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-learning",
+    "requirement": "publish success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-learning-publish-failure",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-learning",
+    "requirement": "publish failure",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-assessments-assessment-list",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-assessments",
+    "requirement": "assessment list",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-assessments-empty-queue",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-assessments",
+    "requirement": "empty queue",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-assessments-navigation-actions",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-assessments",
+    "requirement": "navigation actions",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-create-assignment-required-field-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-create-assignment",
+    "requirement": "required field validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-create-assignment-draft-save",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-create-assignment",
+    "requirement": "draft save",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-create-assignment-publish-success",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-create-assignment",
+    "requirement": "publish success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-create-assignment-publish-error",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-create-assignment",
+    "requirement": "publish error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-create-assignment-step-gating",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-create-assignment",
+    "requirement": "step gating",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-grade-submissions-grade-publish",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-grade-submissions",
+    "requirement": "grade publish",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-grade-submissions-skip-submission",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-grade-submissions",
+    "requirement": "skip submission",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-grade-submissions-empty-queue",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-grade-submissions",
+    "requirement": "empty queue",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-grade-submissions-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-grade-submissions",
+    "requirement": "validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-grade-submissions-audit-trail",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-grade-submissions",
+    "requirement": "audit trail",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-enter-marks-range-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-enter-marks",
+    "requirement": "range validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-enter-marks-absent-handling",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-enter-marks",
+    "requirement": "absent handling",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-enter-marks-save-draft",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-enter-marks",
+    "requirement": "save draft",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-enter-marks-submit-lock",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-enter-marks",
+    "requirement": "submit lock",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-enter-marks-server-validation-failure",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-enter-marks",
+    "requirement": "server validation failure",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-shared-messages-teacher-thread-list-loading",
+    "sourceType": "screen",
+    "sourceId": "screen-shared-messages-teacher",
+    "requirement": "thread list loading",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-shared-messages-teacher-send-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-shared-messages-teacher",
+    "requirement": "send validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-shared-messages-teacher-send-success",
+    "sourceType": "screen",
+    "sourceId": "screen-shared-messages-teacher",
+    "requirement": "send success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-shared-messages-teacher-send-error",
+    "sourceType": "screen",
+    "sourceId": "screen-shared-messages-teacher",
+    "requirement": "send error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-shared-messages-teacher-recipient-permission",
+    "sourceType": "screen",
+    "sourceId": "screen-shared-messages-teacher",
+    "requirement": "recipient permission",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-more-all-hub-links-resolve",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-more",
+    "requirement": "all hub links resolve",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-more-hidden-unauthorized-modules",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-more",
+    "requirement": "hidden unauthorized modules",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-dashboard-dashboard-loading",
+    "sourceType": "screen",
+    "sourceId": "screen-student-dashboard",
+    "requirement": "dashboard loading",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-dashboard-empty-tasks",
+    "sourceType": "screen",
+    "sourceId": "screen-student-dashboard",
+    "requirement": "empty tasks",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-dashboard-quick-actions",
+    "sourceType": "screen",
+    "sourceId": "screen-student-dashboard",
+    "requirement": "quick actions",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-learn-course-list",
+    "sourceType": "screen",
+    "sourceId": "screen-student-learn",
+    "requirement": "course list",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-learn-continue-lesson",
+    "sourceType": "screen",
+    "sourceId": "screen-student-learn",
+    "requirement": "continue lesson",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-learn-empty-learning-path",
+    "sourceType": "screen",
+    "sourceId": "screen-student-learn",
+    "requirement": "empty learning path",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-tasks-submit-upload-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-student-tasks",
+    "requirement": "submit upload validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-tasks-overdue-state",
+    "sourceType": "screen",
+    "sourceId": "screen-student-tasks",
+    "requirement": "overdue state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-tasks-empty-tasks",
+    "sourceType": "screen",
+    "sourceId": "screen-student-tasks",
+    "requirement": "empty tasks",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-tasks-submission-error",
+    "sourceType": "screen",
+    "sourceId": "screen-student-tasks",
+    "requirement": "submission error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-dashboard-child-switch",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-dashboard",
+    "requirement": "child switch",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-dashboard-no-children-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-dashboard",
+    "requirement": "no children state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-dashboard-fee-alert-navigation",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-dashboard",
+    "requirement": "fee alert navigation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-fees-open-payment-dialog",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-fees",
+    "requirement": "open payment dialog",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-fees-gateway-redirect",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-fees",
+    "requirement": "gateway redirect",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-fees-payment-success",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-fees",
+    "requirement": "payment success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-fees-payment-failure",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-fees",
+    "requirement": "payment failure",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-fees-receipt-download",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-fees",
+    "requirement": "receipt download",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-leave-date-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-leave",
+    "requirement": "date validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-leave-reason-required",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-leave",
+    "requirement": "reason required",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-leave-submit-success",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-leave",
+    "requirement": "submit success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-leave-submit-error",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-leave",
+    "requirement": "submit error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-dashboard-setup-progress",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-dashboard",
+    "requirement": "setup progress",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-dashboard-quick-actions",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-dashboard",
+    "requirement": "quick actions",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-dashboard-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-dashboard",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-people-search",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-people",
+    "requirement": "search",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-people-class-filter",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-people",
+    "requirement": "class filter",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-people-empty-result-clear",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-people",
+    "requirement": "empty result clear",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-people-open-student-route",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-people",
+    "requirement": "open student route",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-academics-add-remove-section",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-academics",
+    "requirement": "add/remove section",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-academics-add-remove-subject",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-academics",
+    "requirement": "add/remove subject",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-academics-save-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-academics",
+    "requirement": "save validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-academics-server-conflict",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-academics",
+    "requirement": "server conflict",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-users-roles-invite-user",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-users-roles",
+    "requirement": "invite user",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-users-roles-edit-user",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-users-roles",
+    "requirement": "edit user",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-users-roles-suspend-user",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-users-roles",
+    "requirement": "suspend user",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-users-roles-permission-matrix-save",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-users-roles",
+    "requirement": "permission matrix save",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-users-roles-permission-denial",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-users-roles",
+    "requirement": "permission denial",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-dashboard-kpi-loading",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-dashboard",
+    "requirement": "KPI loading",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-dashboard-approval-navigation",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-dashboard",
+    "requirement": "approval navigation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-dashboard-empty-approvals",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-dashboard",
+    "requirement": "empty approvals",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-approvals-approve-with-audit-reason",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-approvals",
+    "requirement": "approve with audit reason",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-approvals-reject-reason-required",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-approvals",
+    "requirement": "reject reason required",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-approvals-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-approvals",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-approvals-empty-approvals",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-approvals",
+    "requirement": "empty approvals",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-dashboard-kpi-loading",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-dashboard",
+    "requirement": "KPI loading",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-dashboard-dues-empty",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-dashboard",
+    "requirement": "dues empty",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-dashboard-reconciliation-navigation",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-dashboard",
+    "requirement": "reconciliation navigation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-collect-payment-student-search",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-collect-payment",
+    "requirement": "student search",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-collect-payment-amount-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-collect-payment",
+    "requirement": "amount validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-collect-payment-collect-payment-idempotency",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-collect-payment",
+    "requirement": "collect payment idempotency",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-collect-payment-receipt-print-send",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-collect-payment",
+    "requirement": "receipt print/send",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-collect-payment-failure-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-collect-payment",
+    "requirement": "failure state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fee-setup-add-remove-fee-head",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fee-setup",
+    "requirement": "add/remove fee head",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fee-setup-amount-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fee-setup",
+    "requirement": "amount validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fee-setup-class-assignment",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fee-setup",
+    "requirement": "class assignment",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fee-setup-publish-success",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fee-setup",
+    "requirement": "publish success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fee-setup-publish-failure",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fee-setup",
+    "requirement": "publish failure",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reconciliation-match-payment",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reconciliation",
+    "requirement": "match payment",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reconciliation-export",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reconciliation",
+    "requirement": "export",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reconciliation-empty-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reconciliation",
+    "requirement": "empty state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reconciliation-audit-log",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reconciliation",
+    "requirement": "audit log",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-dashboard-tenant-list",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-dashboard",
+    "requirement": "tenant list",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-dashboard-tenant-open-route",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-dashboard",
+    "requirement": "tenant open route",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-dashboard-create-tenant-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-dashboard",
+    "requirement": "create tenant validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-dashboard-tenant-permission",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-dashboard",
+    "requirement": "tenant permission",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-enquiries-add-enquiry-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-enquiries",
+    "requirement": "add enquiry validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-enquiries-convert",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-enquiries",
+    "requirement": "convert",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-enquiries-call-action",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-enquiries",
+    "requirement": "call action",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-enquiries-empty-board",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-enquiries",
+    "requirement": "empty board",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-applicant-portal-required-fields",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-applicant-portal",
+    "requirement": "required fields",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-applicant-portal-document-upload-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-applicant-portal",
+    "requirement": "document upload validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-applicant-portal-submit-application",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-applicant-portal",
+    "requirement": "submit application",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-applicant-portal-resume-draft",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-applicant-portal",
+    "requirement": "resume draft",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-applicant-portal-submission-error",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-applicant-portal",
+    "requirement": "submission error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-review-select-application",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-review",
+    "requirement": "select application",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-review-offer",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-review",
+    "requirement": "offer",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-review-reject-reason-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-review",
+    "requirement": "reject reason validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-review-request-docs",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-review",
+    "requirement": "request docs",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admissions-review-audit-trail",
+    "sourceType": "screen",
+    "sourceId": "screen-admissions-review",
+    "requirement": "audit trail",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exams-list-exam-list",
+    "sourceType": "screen",
+    "sourceId": "screen-exams-list",
+    "requirement": "exam list",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exams-list-empty-exams",
+    "sourceType": "screen",
+    "sourceId": "screen-exams-list",
+    "requirement": "empty exams",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exams-list-new-exam-navigation",
+    "sourceType": "screen",
+    "sourceId": "screen-exams-list",
+    "requirement": "new exam navigation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exams-list-result-review-navigation",
+    "sourceType": "screen",
+    "sourceId": "screen-exams-list",
+    "requirement": "result review navigation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-setup-wizard-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-setup",
+    "requirement": "wizard validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-setup-class-subject-selection",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-setup",
+    "requirement": "class/subject selection",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-setup-date-validation",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-setup",
+    "requirement": "date validation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-setup-create-success",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-setup",
+    "requirement": "create success",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-setup-create-error",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-setup",
+    "requirement": "create error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-result-review-review-checks",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-result-review",
+    "requirement": "review checks",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-result-review-publish-confirmation",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-result-review",
+    "requirement": "publish confirmation",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-result-review-publish-error",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-result-review",
+    "requirement": "publish error",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-exam-result-review-audit-log",
+    "sourceType": "screen",
+    "sourceId": "screen-exam-result-review",
+    "requirement": "audit log",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-announcement-audience-count",
+    "sourceType": "screen",
+    "sourceId": "screen-announcement",
+    "requirement": "audience count",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-announcement-required-fields",
+    "sourceType": "screen",
+    "sourceId": "screen-announcement",
+    "requirement": "required fields",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-announcement-preview",
+    "sourceType": "screen",
+    "sourceId": "screen-announcement",
+    "requirement": "preview",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-announcement-send-now",
+    "sourceType": "screen",
+    "sourceId": "screen-announcement",
+    "requirement": "send now",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-announcement-send-failure",
+    "sourceType": "screen",
+    "sourceId": "screen-announcement",
+    "requirement": "send failure",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-profile-save-preferences",
+    "sourceType": "screen",
+    "sourceId": "screen-profile",
+    "requirement": "save preferences",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-profile-language-persistence",
+    "sourceType": "screen",
+    "sourceId": "screen-profile",
+    "requirement": "language persistence",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-profile-offline-preference",
+    "sourceType": "screen",
+    "sourceId": "screen-profile",
+    "requirement": "offline preference",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-profile-device-sign-out",
+    "sourceType": "screen",
+    "sourceId": "screen-profile",
+    "requirement": "device sign-out",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-states-gallery-state-components-render",
+    "sourceType": "screen",
+    "sourceId": "screen-states-gallery",
+    "requirement": "state components render",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-states-gallery-retry-clear-callbacks",
+    "sourceType": "screen",
+    "sourceId": "screen-states-gallery",
+    "requirement": "retry/clear callbacks",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-timetable-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-timetable",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-timetable-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-timetable",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-timetable-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-timetable",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-timetable-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-timetable",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-timetable-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-timetable",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-timetable-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-timetable",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-reports-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-reports",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-reports-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-reports",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-reports-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-reports",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-reports-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-reports",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-reports-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-reports",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-teacher-reports-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-teacher-reports",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-timetable-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-student-timetable",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-timetable-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-student-timetable",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-timetable-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-student-timetable",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-timetable-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-student-timetable",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-timetable-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-student-timetable",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-timetable-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-student-timetable",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-results-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-student-results",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-results-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-student-results",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-results-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-student-results",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-results-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-student-results",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-results-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-student-results",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-results-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-student-results",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-messages-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-student-messages",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-messages-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-student-messages",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-messages-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-student-messages",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-messages-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-student-messages",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-messages-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-student-messages",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-student-messages-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-student-messages",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-child-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-child",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-child-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-child",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-child-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-child",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-child-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-child",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-child-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-child",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-child-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-child",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-attendance-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-attendance",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-attendance-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-attendance",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-attendance-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-attendance",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-attendance-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-attendance",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-attendance-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-attendance",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-attendance-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-attendance",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-learning-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-learning",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-learning-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-learning",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-learning-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-learning",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-learning-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-learning",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-learning-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-learning",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-learning-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-learning",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-results-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-results",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-results-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-results",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-results-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-results",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-results-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-results",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-results-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-results",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-results-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-results",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-messages-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-messages",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-messages-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-messages",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-messages-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-messages",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-messages-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-messages",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-messages-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-messages",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-parent-messages-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-parent-messages",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-operations-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-operations",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-operations-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-operations",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-operations-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-operations",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-operations-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-operations",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-operations-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-operations",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-operations-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-operations",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-communication-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-communication",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-communication-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-communication",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-communication-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-communication",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-communication-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-communication",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-communication-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-communication",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-communication-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-communication",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-reports-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-reports",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-reports-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-reports",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-reports-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-reports",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-reports-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-reports",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-reports-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-reports",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-reports-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-reports",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-settings-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-settings",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-settings-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-settings",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-settings-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-settings",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-settings-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-settings",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-settings-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-settings",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-admin-settings-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-admin-settings",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-academics-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-academics",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-academics-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-academics",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-academics-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-academics",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-academics-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-academics",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-academics-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-academics",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-academics-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-academics",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-students-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-students",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-students-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-students",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-students-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-students",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-students-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-students",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-students-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-students",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-students-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-students",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-staff-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-staff",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-staff-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-staff",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-staff-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-staff",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-staff-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-staff",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-staff-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-staff",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-staff-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-staff",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-finance-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-finance",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-finance-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-finance",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-finance-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-finance",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-finance-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-finance",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-finance-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-finance",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-finance-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-finance",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-reports-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-reports",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-reports-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-reports",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-reports-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-reports",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-reports-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-reports",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-reports-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-reports",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-principal-reports-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-principal-reports",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fees-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fees",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fees-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fees",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fees-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fees",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fees-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fees",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fees-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fees",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-fees-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-fees",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reports-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reports",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reports-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reports",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reports-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reports",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reports-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reports",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reports-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reports",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-reports-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-reports",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-settings-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-settings",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-settings-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-settings",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-settings-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-settings",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-settings-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-settings",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-settings-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-settings",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-accountant-settings-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-accountant-settings",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-schools-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-schools",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-schools-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-schools",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-schools-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-schools",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-schools-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-schools",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-schools-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-schools",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-schools-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-schools",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-plans-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-plans",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-plans-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-plans",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-plans-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-plans",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-plans-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-plans",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-plans-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-plans",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-plans-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-plans",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-operations-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-operations",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-operations-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-operations",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-operations-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-operations",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-operations-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-operations",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-operations-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-operations",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-operations-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-operations",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-support-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-support",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-support-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-support",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-support-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-support",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-support-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-support",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-support-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-support",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-support-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-support",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-reports-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-reports",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-reports-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-reports",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-reports-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-reports",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-reports-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-reports",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-reports-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-reports",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-reports-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-reports",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-settings-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-settings",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-settings-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-settings",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-settings-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-settings",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-settings-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-settings",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-settings-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-settings",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-platform-settings-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-platform-settings",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-timetable-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-timetable",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-timetable-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-timetable",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-timetable-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-timetable",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-timetable-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-timetable",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-timetable-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-timetable",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-timetable-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-timetable",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-library-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-library",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-library-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-library",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-library-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-library",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-library-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-library",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-library-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-library",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-library-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-library",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-transport-route-renders",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-transport",
+    "requirement": "route renders",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-transport-loading-state",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-transport",
+    "requirement": "loading state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-transport-empty-state-where-applicable",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-transport",
+    "requirement": "empty state where applicable",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-transport-error-state",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-transport",
+    "requirement": "error state",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-transport-permission-denied",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-transport",
+    "requirement": "permission denied",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-screen-operations-transport-all-visible-actions-are-registered",
+    "sourceType": "screen",
+    "sourceId": "screen-operations-transport",
+    "requirement": "all visible actions are registered",
+    "level": "component/e2e",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-context-current-school",
+    "sourceType": "action",
+    "sourceId": "action-global-context-current-school",
+    "requirement": "switch context success, unauthorized context blocked",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-context-static-options",
+    "sourceType": "action",
+    "sourceId": "action-global-context-static-options",
+    "requirement": "menu item changes context",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-role-switcher",
+    "sourceType": "action",
+    "sourceId": "action-global-role-switcher",
+    "requirement": "cannot escalate to unassigned role",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-experience-switcher",
+    "sourceType": "action",
+    "sourceId": "action-global-experience-switcher",
+    "requirement": "preference persists after reload",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-search",
+    "sourceType": "action",
+    "sourceId": "action-global-search",
+    "requirement": "search results, no-results, permission filtering",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-notifications",
+    "sourceType": "action",
+    "sourceId": "action-global-notifications",
+    "requirement": "open notification and mark-read success/error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-help-support",
+    "sourceType": "action",
+    "sourceId": "action-global-help-support",
+    "requirement": "ticket creation success/error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-global-profile-menu-signout",
+    "sourceType": "action",
+    "sourceId": "action-global-profile-menu-signout",
+    "requirement": "logout clears session and protected routes redirect",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-signin-submit",
+    "sourceType": "action",
+    "sourceId": "action-signin-submit",
+    "requirement": "valid login, invalid login, required fields",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-signin-sso",
+    "sourceType": "action",
+    "sourceId": "action-signin-sso",
+    "requirement": "SSO redirect and error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-signin-forgot-contact",
+    "sourceType": "action",
+    "sourceId": "action-signin-forgot-contact",
+    "requirement": "forgot and contact flows",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-profile-preferences",
+    "sourceType": "action",
+    "sourceId": "action-profile-preferences",
+    "requirement": "save, reload persistence, device sign-out, error handling",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-teacher-dashboard-navigation",
+    "sourceType": "action",
+    "sourceId": "action-teacher-dashboard-navigation",
+    "requirement": "all quick actions route correctly",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-teacher-classes-open-attendance-learning",
+    "sourceType": "action",
+    "sourceId": "action-teacher-classes-open-attendance-learning",
+    "requirement": "selected class id passed and unauthorized class blocked",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-attendance-mark-submit",
+    "sourceType": "action",
+    "sourceId": "action-attendance-mark-submit",
+    "requirement": "status changes, submit, server error, offline draft",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-learning-publish-save-select",
+    "sourceType": "action",
+    "sourceId": "action-learning-publish-save-select",
+    "requirement": "select unit, save, publish, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-create-assignment-wizard",
+    "sourceType": "action",
+    "sourceId": "action-create-assignment-wizard",
+    "requirement": "step validation, draft save, publish success/error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-grade-submissions",
+    "sourceType": "action",
+    "sourceId": "action-grade-submissions",
+    "requirement": "publish feedback, skip, empty queue, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-enter-marks",
+    "sourceType": "action",
+    "sourceId": "action-enter-marks",
+    "requirement": "range error, absent toggle, draft, submit, conflict",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-messaging",
+    "sourceType": "action",
+    "sourceId": "action-messaging",
+    "requirement": "compose, send, empty message blocked, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-module-hub-links",
+    "sourceType": "action",
+    "sourceId": "action-module-hub-links",
+    "requirement": "all hub links resolve and unauthorized modules hidden",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-student-learn-continue",
+    "sourceType": "action",
+    "sourceId": "action-student-learn-continue",
+    "requirement": "continue opens lesson, unavailable lesson error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-student-tasks-submit",
+    "sourceType": "action",
+    "sourceId": "action-student-tasks-submit",
+    "requirement": "submit success, required upload, late submission",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-parent-dashboard",
+    "sourceType": "action",
+    "sourceId": "action-parent-dashboard",
+    "requirement": "child switch scoped data, actions route",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-parent-fees-payment",
+    "sourceType": "action",
+    "sourceId": "action-parent-fees-payment",
+    "requirement": "pay single/all, cancel, success, failure, receipt",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-leave-submit",
+    "sourceType": "action",
+    "sourceId": "action-leave-submit",
+    "requirement": "required fields, invalid date, success, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-admin-dashboard",
+    "sourceType": "action",
+    "sourceId": "action-admin-dashboard",
+    "requirement": "all routes resolve, import route exists",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-student-directory",
+    "sourceType": "action",
+    "sourceId": "action-student-directory",
+    "requirement": "search, filter, open route, add workflow",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-admin-academics",
+    "sourceType": "action",
+    "sourceId": "action-admin-academics",
+    "requirement": "CRUD local controls and server save/error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-admin-users-roles",
+    "sourceType": "action",
+    "sourceId": "action-admin-users-roles",
+    "requirement": "invite, edit, suspend, save matrix, self-lockout prevention",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-principal-approvals",
+    "sourceType": "action",
+    "sourceId": "action-principal-approvals",
+    "requirement": "approve, reject requires reason, conflict, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-accountant-dashboard",
+    "sourceType": "action",
+    "sourceId": "action-accountant-dashboard",
+    "requirement": "routes resolve",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-accountant-collect-payment",
+    "sourceType": "action",
+    "sourceId": "action-accountant-collect-payment",
+    "requirement": "collect, duplicate prevention, print/send, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-accountant-fee-setup",
+    "sourceType": "action",
+    "sourceId": "action-accountant-fee-setup",
+    "requirement": "head validation, class assignment, publish, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-accountant-reconciliation",
+    "sourceType": "action",
+    "sourceId": "action-accountant-reconciliation",
+    "requirement": "export, match, conflict, empty list",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-platform-dashboard",
+    "sourceType": "action",
+    "sourceId": "action-platform-dashboard",
+    "requirement": "create tenant validation, open tenant route",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-admissions-enquiries",
+    "sourceType": "action",
+    "sourceId": "action-admissions-enquiries",
+    "requirement": "add, call log, convert, duplicate handling",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-applicant-portal",
+    "sourceType": "action",
+    "sourceId": "action-applicant-portal",
+    "requirement": "required fields, required docs, upload failure, submit success",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-application-review",
+    "sourceType": "action",
+    "sourceId": "action-application-review",
+    "requirement": "offer, reject, reason validation, request docs, schedule",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-exams-list",
+    "sourceType": "action",
+    "sourceId": "action-exams-list",
+    "requirement": "routes resolve with selected exam id",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-exam-setup",
+    "sourceType": "action",
+    "sourceId": "action-exam-setup",
+    "requirement": "required fields, date validity, create success/error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-result-review-publish",
+    "sourceType": "action",
+    "sourceId": "action-result-review-publish",
+    "requirement": "blocked checks, confirm publish, error",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-announcement",
+    "sourceType": "action",
+    "sourceId": "action-announcement",
+    "requirement": "draft, preview, send, schedule, validation, failure",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-reports",
+    "sourceType": "action",
+    "sourceId": "action-reports",
+    "requirement": "open, preview, save, export, permission filtering",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-report-card-download",
+    "sourceType": "action",
+    "sourceId": "action-report-card-download",
+    "requirement": "download success, forbidden student",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-states-gallery",
+    "sourceType": "action",
+    "sourceId": "action-states-gallery",
+    "requirement": "state components render",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "test-action-detected-empty-and-placeholder-patterns",
+    "sourceType": "action",
+    "sourceId": "action-detected-empty-and-placeholder-patterns",
+    "requirement": "unit/integration/e2e coverage per action category",
+    "level": "unit/integration/e2e as applicable",
+    "status": "required-not-implemented"
+  }
+]

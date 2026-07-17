@@ -1,0 +1,782 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TenantStatus {
+  ACTIVE
+  SUSPENDED
+  ARCHIVED
+}
+
+enum UserStatus {
+  INVITED
+  ACTIVE
+  SUSPENDED
+  ARCHIVED
+}
+
+enum MembershipStatus {
+  ACTIVE
+  SUSPENDED
+  ARCHIVED
+}
+
+enum SessionStatus {
+  ACTIVE
+  REVOKED
+  EXPIRED
+}
+
+enum StudentStatus {
+  ACTIVE
+  INACTIVE
+  ALUMNI
+}
+
+enum EnrollmentStatus {
+  ACTIVE
+  TRANSFERRED
+  WITHDRAWN
+}
+
+enum AttendanceSessionStatus {
+  DRAFT
+  SUBMITTED
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  LATE
+  LEAVE
+}
+
+enum AssignmentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum AssignmentSubmissionStatus {
+  ASSIGNED
+  SUBMITTED
+  GRADED
+}
+
+enum ExamStatus {
+  DRAFT
+  MARKS_ENTRY
+  MARKS_SUBMITTED
+  RESULTS_PUBLISHED
+}
+
+enum FeeDemandStatus {
+  DUE
+  PAID
+}
+
+enum PaymentMethod {
+  CASH
+  UPI
+  CARD
+  CHEQUE
+  ONLINE
+}
+
+enum AdmissionStage {
+  NEW
+  UNDER_REVIEW
+  INTERVIEW
+  OFFERED
+  REJECTED
+}
+
+enum AnnouncementStatus {
+  DRAFT
+  SENT
+}
+
+enum BillingCycle {
+  MONTHLY
+  ANNUAL
+  CONTRACT
+}
+
+model Tenant {
+  id        String       @id @default(uuid()) @db.Uuid
+  code      String       @unique
+  name      String
+  status    TenantStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime     @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  branches           Branch[]
+  roles              Role[]
+  memberships        UserTenantMembership[]
+  auditEvents        AuditEvent[]
+  classes            AcademicClass[]
+  students           StudentProfile[]
+  enrollments        Enrollment[]
+  attendanceSessions AttendanceSession[]
+  attendanceRecords  AttendanceRecord[]
+  assignments        Assignment[]
+  submissions        AssignmentSubmission[]
+  exams              Exam[]
+  examMarks          ExamMark[]
+  feeDemands         FeeDemand[]
+  payments           Payment[]
+  admissionApplications AdmissionApplication[]
+  conversations         Conversation[]
+  messages              Message[]
+  announcements         Announcement[]
+  platformProfile       PlatformTenantProfile?
+  subscriptions         PlatformSubscription[]
+
+  @@map("tenants")
+}
+
+model PlatformTenantProfile {
+  id              String   @id @default(uuid()) @db.Uuid
+  tenantId        String   @unique @map("tenant_id") @db.Uuid
+  organizationId  String   @unique @map("organization_id")
+  primaryDomain   String   @unique @map("primary_domain")
+  city            String
+  state           String
+  phone           String
+  email           String
+  adminName       String   @map("admin_name")
+  adminEmail      String   @map("admin_email")
+  studentCapacity Int?     @map("student_capacity")
+  implementationOwner String @map("implementation_owner")
+  onboardingNotes String?  @map("onboarding_notes")
+  supportKeyHash String    @map("support_key_hash")
+  supportKeyRotatedAt DateTime @default(now()) @map("support_key_rotated_at") @db.Timestamptz(6)
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  editChallenges PlatformTenantEditChallenge[]
+
+  @@index([organizationId])
+  @@map("platform_tenant_profiles")
+}
+
+model PlatformTenantEditChallenge {
+  id            String    @id @default(uuid()) @db.Uuid
+  profileId     String    @map("profile_id") @db.Uuid
+  actorId       String    @map("actor_id") @db.Uuid
+  otpHash       String    @map("otp_hash")
+  editTokenHash String?   @map("edit_token_hash")
+  verifiedAt    DateTime? @map("verified_at") @db.Timestamptz(6)
+  expiresAt     DateTime  @map("expires_at") @db.Timestamptz(6)
+  usedAt        DateTime? @map("used_at") @db.Timestamptz(6)
+  createdAt     DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  profile PlatformTenantProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  actor   User                  @relation(fields: [actorId], references: [id], onDelete: Cascade)
+
+  @@index([profileId, actorId, expiresAt])
+  @@index([editTokenHash])
+  @@map("platform_tenant_edit_challenges")
+}
+
+model PlatformPlan {
+  id           String       @id @default(uuid()) @db.Uuid
+  code         String       @unique
+  name         String
+  billingCycle BillingCycle @map("billing_cycle")
+  basePrice    Int          @map("base_price")
+  description  String?
+  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime     @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  subscriptions PlatformSubscription[]
+
+  @@map("platform_plans")
+}
+
+model PlatformRole {
+  id          String   @id @default(uuid()) @db.Uuid
+  key         String   @unique
+  name        String
+  description String?
+  system      Boolean  @default(false)
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  permissions PlatformRolePermission[]
+  staff        PlatformUserProfile[]
+
+  @@map("platform_roles")
+}
+
+model PlatformRolePermission {
+  roleId       String   @map("role_id") @db.Uuid
+  permissionId String   @map("permission_id") @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  role       PlatformRole @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission   @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+  @@index([permissionId])
+  @@map("platform_role_permissions")
+}
+
+model PlatformUserProfile {
+  id        String           @id @default(uuid()) @db.Uuid
+  userId    String           @unique @map("user_id") @db.Uuid
+  roleId    String           @map("role_id") @db.Uuid
+  status    MembershipStatus @default(ACTIVE)
+  createdAt DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime         @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  user User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role PlatformRole @relation(fields: [roleId], references: [id], onDelete: Restrict)
+
+  @@index([roleId])
+  @@index([status])
+  @@map("platform_user_profiles")
+}
+
+model PlatformSubscription {
+  id        String   @id @default(uuid()) @db.Uuid
+  tenantId  String   @map("tenant_id") @db.Uuid
+  planId    String   @map("plan_id") @db.Uuid
+  status    String   @default("ACTIVE")
+  startsAt  DateTime @default(now()) @map("starts_at") @db.Timestamptz(6)
+  renewsAt  DateTime? @map("renews_at") @db.Timestamptz(6)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant Tenant       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  plan   PlatformPlan @relation(fields: [planId], references: [id], onDelete: Restrict)
+
+  @@index([tenantId, status])
+  @@index([planId])
+  @@map("platform_subscriptions")
+}
+
+model Branch {
+  id        String   @id @default(uuid()) @db.Uuid
+  tenantId  String   @map("tenant_id") @db.Uuid
+  code      String
+  name      String
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant             Tenant                 @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  memberships        UserTenantMembership[]
+  auditEvents        AuditEvent[]
+  classes            AcademicClass[]
+  students           StudentProfile[]
+  enrollments        Enrollment[]
+  attendanceSessions AttendanceSession[]
+  attendanceRecords  AttendanceRecord[]
+  assignments        Assignment[]
+  submissions        AssignmentSubmission[]
+  exams              Exam[]
+  examMarks          ExamMark[]
+  feeDemands         FeeDemand[]
+  payments           Payment[]
+  admissionApplications AdmissionApplication[]
+  conversations         Conversation[]
+  messages              Message[]
+  announcements         Announcement[]
+
+  @@unique([tenantId, code])
+  @@index([tenantId])
+  @@map("branches")
+}
+
+model AcademicClass {
+  id        String   @id @default(uuid()) @db.Uuid
+  tenantId  String   @map("tenant_id") @db.Uuid
+  branchId  String   @map("branch_id") @db.Uuid
+  code      String
+  name      String
+  subject   String?
+  room      String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant             Tenant              @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch             Branch              @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  enrollments        Enrollment[]
+  attendanceSessions AttendanceSession[]
+  assignments        Assignment[]
+  exams              Exam[]
+
+  @@unique([tenantId, branchId, code])
+  @@index([tenantId, branchId])
+  @@map("academic_classes")
+}
+
+model StudentProfile {
+  id          String        @id @default(uuid()) @db.Uuid
+  tenantId    String        @map("tenant_id") @db.Uuid
+  branchId    String        @map("branch_id") @db.Uuid
+  admissionNo String        @map("admission_no")
+  displayName String        @map("display_name")
+  status      StudentStatus @default(ACTIVE)
+  createdAt   DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime      @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant            Tenant             @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch            Branch             @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  enrollments       Enrollment[]
+  attendanceRecords AttendanceRecord[]
+  submissions       AssignmentSubmission[]
+  examMarks         ExamMark[]
+  feeDemands        FeeDemand[]
+  payments          Payment[]
+
+  @@unique([tenantId, admissionNo])
+  @@index([tenantId, branchId, status])
+  @@map("student_profiles")
+}
+
+model Enrollment {
+  id        String           @id @default(uuid()) @db.Uuid
+  tenantId  String           @map("tenant_id") @db.Uuid
+  branchId  String           @map("branch_id") @db.Uuid
+  classId   String           @map("class_id") @db.Uuid
+  studentId String           @map("student_id") @db.Uuid
+  rollNo    String           @map("roll_no")
+  status    EnrollmentStatus @default(ACTIVE)
+  createdAt DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime         @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant  Tenant         @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch  Branch         @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  class   AcademicClass  @relation(fields: [classId], references: [id], onDelete: Restrict)
+  student StudentProfile @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([classId, studentId])
+  @@unique([classId, rollNo])
+  @@index([tenantId, branchId, classId, status])
+  @@index([studentId])
+  @@map("enrollments")
+}
+
+model AttendanceSession {
+  id             String                  @id @default(uuid()) @db.Uuid
+  tenantId       String                  @map("tenant_id") @db.Uuid
+  branchId       String                  @map("branch_id") @db.Uuid
+  classId        String                  @map("class_id") @db.Uuid
+  attendanceDate DateTime                @map("attendance_date") @db.Date
+  status         AttendanceSessionStatus @default(DRAFT)
+  submittedAt    DateTime?               @map("submitted_at") @db.Timestamptz(6)
+  submittedById  String?                 @map("submitted_by_id") @db.Uuid
+  createdAt      DateTime                @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime                @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant  Tenant             @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch  Branch             @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  class   AcademicClass      @relation(fields: [classId], references: [id], onDelete: Restrict)
+  records AttendanceRecord[]
+
+  @@unique([classId, attendanceDate])
+  @@index([tenantId, branchId, attendanceDate])
+  @@map("attendance_sessions")
+}
+
+model AttendanceRecord {
+  id         String           @id @default(uuid()) @db.Uuid
+  tenantId   String           @map("tenant_id") @db.Uuid
+  branchId   String           @map("branch_id") @db.Uuid
+  sessionId  String           @map("session_id") @db.Uuid
+  studentId  String           @map("student_id") @db.Uuid
+  status     AttendanceStatus
+  note       String?
+  markedById String           @map("marked_by_id") @db.Uuid
+  createdAt  DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt  DateTime         @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant  Tenant            @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch  Branch            @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  session AttendanceSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  student StudentProfile    @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([sessionId, studentId])
+  @@index([tenantId, branchId, sessionId])
+  @@index([studentId])
+  @@map("attendance_records")
+}
+
+model Assignment {
+  id             String           @id @default(uuid()) @db.Uuid
+  tenantId       String           @map("tenant_id") @db.Uuid
+  branchId       String           @map("branch_id") @db.Uuid
+  classId        String           @map("class_id") @db.Uuid
+  createdById    String           @map("created_by_id") @db.Uuid
+  title          String
+  subject        String
+  instructions   String
+  dueAt          DateTime         @map("due_at") @db.Timestamptz(6)
+  totalMarks     Int              @map("total_marks")
+  submissionType String           @map("submission_type")
+  status         AssignmentStatus @default(DRAFT)
+  publishedAt    DateTime?        @map("published_at") @db.Timestamptz(6)
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime         @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant      Tenant                 @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch      Branch                 @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  class       AcademicClass          @relation(fields: [classId], references: [id], onDelete: Restrict)
+  createdBy   User                   @relation("AssignmentCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  submissions AssignmentSubmission[]
+
+  @@index([tenantId, branchId, classId, status])
+  @@index([createdById])
+  @@map("assignments")
+}
+
+model AssignmentSubmission {
+  id            String                     @id @default(uuid()) @db.Uuid
+  tenantId      String                     @map("tenant_id") @db.Uuid
+  branchId      String                     @map("branch_id") @db.Uuid
+  assignmentId  String                     @map("assignment_id") @db.Uuid
+  studentId     String                     @map("student_id") @db.Uuid
+  status        AssignmentSubmissionStatus @default(ASSIGNED)
+  responseText  String?                    @map("response_text")
+  submittedAt   DateTime?                  @map("submitted_at") @db.Timestamptz(6)
+  marksAwarded  Int?                       @map("marks_awarded")
+  feedback      String?
+  gradedAt      DateTime?                  @map("graded_at") @db.Timestamptz(6)
+  gradedById    String?                    @map("graded_by_id") @db.Uuid
+  createdAt     DateTime                   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime                   @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant     Tenant         @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch     Branch         @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  assignment Assignment     @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  student    StudentProfile @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  gradedBy   User?          @relation("AssignmentGrader", fields: [gradedById], references: [id], onDelete: SetNull)
+
+  @@unique([assignmentId, studentId])
+  @@index([tenantId, branchId, status])
+  @@index([studentId, status])
+  @@map("assignment_submissions")
+}
+
+model Exam {
+  id          String     @id @default(uuid()) @db.Uuid
+  tenantId    String     @map("tenant_id") @db.Uuid
+  branchId    String     @map("branch_id") @db.Uuid
+  classId     String     @map("class_id") @db.Uuid
+  createdById String     @map("created_by_id") @db.Uuid
+  name        String
+  term        String
+  subject     String
+  maxMarks    Int        @map("max_marks")
+  startDate   DateTime   @map("start_date") @db.Date
+  endDate     DateTime   @map("end_date") @db.Date
+  status      ExamStatus @default(DRAFT)
+  publishedAt DateTime?  @map("published_at") @db.Timestamptz(6)
+  createdAt   DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime   @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant    Tenant        @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch    Branch        @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  class     AcademicClass @relation(fields: [classId], references: [id], onDelete: Restrict)
+  createdBy User          @relation("ExamCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  marks     ExamMark[]
+
+  @@index([tenantId, branchId, classId, status])
+  @@index([createdById])
+  @@map("exams")
+}
+
+model ExamMark {
+  id        String   @id @default(uuid()) @db.Uuid
+  tenantId  String   @map("tenant_id") @db.Uuid
+  branchId  String   @map("branch_id") @db.Uuid
+  examId    String   @map("exam_id") @db.Uuid
+  studentId String   @map("student_id") @db.Uuid
+  marks     Int?
+  absent    Boolean  @default(false)
+  locked    Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant  Tenant         @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch  Branch         @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  exam    Exam           @relation(fields: [examId], references: [id], onDelete: Cascade)
+  student StudentProfile @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([examId, studentId])
+  @@index([tenantId, branchId, examId])
+  @@index([studentId])
+  @@map("exam_marks")
+}
+
+model FeeDemand {
+  id        String          @id @default(uuid()) @db.Uuid
+  tenantId  String          @map("tenant_id") @db.Uuid
+  branchId  String          @map("branch_id") @db.Uuid
+  studentId String          @map("student_id") @db.Uuid
+  label     String
+  amount    Int
+  dueDate   DateTime        @map("due_date") @db.Date
+  status    FeeDemandStatus @default(DUE)
+  createdAt DateTime        @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime        @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant   Tenant         @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch   Branch         @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  student  StudentProfile @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  payments Payment[]
+
+  @@index([tenantId, branchId, status])
+  @@index([studentId, status])
+  @@map("fee_demands")
+}
+
+model Payment {
+  id          String        @id @default(uuid()) @db.Uuid
+  tenantId    String        @map("tenant_id") @db.Uuid
+  branchId    String        @map("branch_id") @db.Uuid
+  demandId    String        @map("demand_id") @db.Uuid
+  studentId   String        @map("student_id") @db.Uuid
+  collectedBy String?       @map("collected_by") @db.Uuid
+  amount      Int
+  method      PaymentMethod
+  receiptNo   String        @unique @map("receipt_no")
+  createdAt   DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  tenant  Tenant         @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch  Branch         @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  demand  FeeDemand      @relation(fields: [demandId], references: [id], onDelete: Restrict)
+  student StudentProfile @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  user    User?          @relation("PaymentCollector", fields: [collectedBy], references: [id], onDelete: SetNull)
+
+  @@index([tenantId, branchId, createdAt])
+  @@index([studentId])
+  @@map("payments")
+}
+
+model User {
+  id           String     @id @default(uuid()) @db.Uuid
+  email        String?    @unique
+  phone        String?    @unique
+  passwordHash String?    @map("password_hash")
+  displayName  String     @map("display_name")
+  status       UserStatus @default(INVITED)
+  mfaEnabled   Boolean    @default(false) @map("mfa_enabled")
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime   @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  memberships UserTenantMembership[]
+  platformProfile PlatformUserProfile?
+  platformEditChallenges PlatformTenantEditChallenge[]
+  sessions    Session[]
+  auditEvents AuditEvent[]           @relation("AuditActor")
+  assignments Assignment[]           @relation("AssignmentCreator")
+  gradedSubmissions AssignmentSubmission[] @relation("AssignmentGrader")
+  exams       Exam[]                 @relation("ExamCreator")
+  collectedPayments Payment[]        @relation("PaymentCollector")
+  reviewedApplications AdmissionApplication[] @relation("AdmissionReviewer")
+  messages Message[] @relation("MessageSender")
+  announcements Announcement[] @relation("AnnouncementCreator")
+
+  @@index([status])
+  @@map("users")
+}
+
+model AdmissionApplication {
+  id             String         @id @default(uuid()) @db.Uuid
+  tenantId       String         @map("tenant_id") @db.Uuid
+  branchId       String         @map("branch_id") @db.Uuid
+  studentName    String         @map("student_name")
+  grade          String
+  guardianName   String         @map("guardian_name")
+  guardianPhone  String         @map("guardian_phone")
+  guardianEmail  String?        @map("guardian_email")
+  source         String         @default("Portal")
+  stage          AdmissionStage @default(NEW)
+  notes          String?
+  reviewedById   String?        @map("reviewed_by_id") @db.Uuid
+  submittedAt    DateTime       @default(now()) @map("submitted_at") @db.Timestamptz(6)
+  updatedAt      DateTime       @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant     Tenant @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch     Branch @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  reviewedBy User?  @relation("AdmissionReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+
+  @@index([tenantId, branchId, stage])
+  @@map("admission_applications")
+}
+
+model Conversation {
+  id        String   @id @default(uuid()) @db.Uuid
+  tenantId  String   @map("tenant_id") @db.Uuid
+  branchId  String   @map("branch_id") @db.Uuid
+  title     String
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant   Tenant    @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch   Branch    @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  messages Message[]
+
+  @@index([tenantId, branchId, updatedAt])
+  @@map("conversations")
+}
+
+model Message {
+  id             String   @id @default(uuid()) @db.Uuid
+  tenantId       String   @map("tenant_id") @db.Uuid
+  branchId       String   @map("branch_id") @db.Uuid
+  conversationId String   @map("conversation_id") @db.Uuid
+  senderId       String   @map("sender_id") @db.Uuid
+  body           String
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  tenant       Tenant       @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch       Branch       @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User         @relation("MessageSender", fields: [senderId], references: [id], onDelete: Restrict)
+
+  @@index([tenantId, branchId, conversationId, createdAt])
+  @@map("messages")
+}
+
+model Announcement {
+  id            String             @id @default(uuid()) @db.Uuid
+  tenantId      String             @map("tenant_id") @db.Uuid
+  branchId      String             @map("branch_id") @db.Uuid
+  createdById   String             @map("created_by_id") @db.Uuid
+  title         String
+  body          String
+  audienceRole  String             @map("audience_role")
+  status        AnnouncementStatus @default(DRAFT)
+  sentAt        DateTime?          @map("sent_at") @db.Timestamptz(6)
+  createdAt     DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime           @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant    Tenant @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch    Branch @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  createdBy User   @relation("AnnouncementCreator", fields: [createdById], references: [id], onDelete: Restrict)
+
+  @@index([tenantId, branchId, status])
+  @@map("announcements")
+}
+
+model Role {
+  id          String   @id @default(uuid()) @db.Uuid
+  tenantId    String   @map("tenant_id") @db.Uuid
+  key         String
+  name        String
+  description String?
+  system      Boolean  @default(false)
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  tenant      Tenant                 @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  permissions RolePermission[]
+  memberships UserTenantMembership[]
+
+  @@unique([tenantId, key])
+  @@index([tenantId])
+  @@map("roles")
+}
+
+model Permission {
+  id          String   @id @default(uuid()) @db.Uuid
+  key         String   @unique
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  roles         RolePermission[]
+  platformRoles PlatformRolePermission[]
+
+  @@map("permissions")
+}
+
+model RolePermission {
+  roleId       String   @map("role_id") @db.Uuid
+  permissionId String   @map("permission_id") @db.Uuid
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+  @@index([permissionId])
+  @@map("role_permissions")
+}
+
+model UserTenantMembership {
+  id        String           @id @default(uuid()) @db.Uuid
+  userId    String           @map("user_id") @db.Uuid
+  tenantId  String           @map("tenant_id") @db.Uuid
+  branchId  String?          @map("branch_id") @db.Uuid
+  roleId    String           @map("role_id") @db.Uuid
+  status    MembershipStatus @default(ACTIVE)
+  createdAt DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime         @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Restrict)
+  tenant Tenant  @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch Branch? @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  role   Role    @relation(fields: [roleId], references: [id], onDelete: Restrict)
+
+  @@unique([userId, tenantId, branchId, roleId])
+  @@index([tenantId, userId])
+  @@index([tenantId, status])
+  @@index([branchId])
+  @@index([roleId])
+  @@map("user_tenant_memberships")
+}
+
+model Session {
+  id                     String        @id @default(uuid()) @db.Uuid
+  userId                 String        @map("user_id") @db.Uuid
+  activeTenantId         String?       @map("active_tenant_id") @db.Uuid
+  activeBranchId         String?       @map("active_branch_id") @db.Uuid
+  refreshTokenHash       String        @map("refresh_token_hash")
+  refreshTokenFamilyHash String        @map("refresh_token_family_hash")
+  status                 SessionStatus @default(ACTIVE)
+  userAgent              String?       @map("user_agent")
+  ipAddress              String?       @map("ip_address") @db.Inet
+  expiresAt              DateTime      @map("expires_at") @db.Timestamptz(6)
+  revokedAt              DateTime?     @map("revoked_at") @db.Timestamptz(6)
+  createdAt              DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt              DateTime      @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+  @@index([activeTenantId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model AuditEvent {
+  id         String   @id @default(uuid()) @db.Uuid
+  tenantId   String?  @map("tenant_id") @db.Uuid
+  branchId   String?  @map("branch_id") @db.Uuid
+  actorId    String?  @map("actor_id") @db.Uuid
+  action     String
+  resource   String
+  resourceId String?  @map("resource_id") @db.Uuid
+  metadata   Json?
+  ipAddress  String?  @map("ip_address") @db.Inet
+  userAgent  String?  @map("user_agent")
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  tenant Tenant? @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+  branch Branch? @relation(fields: [branchId], references: [id], onDelete: Restrict)
+  actor  User?   @relation("AuditActor", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId, createdAt])
+  @@index([actorId, createdAt])
+  @@index([resource, resourceId])
+  @@map("audit_events")
+}

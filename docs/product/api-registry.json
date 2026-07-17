@@ -1,0 +1,1647 @@
+[
+  {
+    "id": "post-auth-login",
+    "endpoint": "POST /auth/login",
+    "module": "signin",
+    "usedByScreens": [
+      "screen-signin"
+    ],
+    "usedByActions": [
+      "action-signin-submit"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-auth-session",
+    "endpoint": "GET /auth/session",
+    "module": "signin",
+    "usedByScreens": [
+      "screen-signin"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-auth-sso-start",
+    "endpoint": "POST /auth/sso/start",
+    "module": "signin",
+    "usedByScreens": [
+      "screen-signin"
+    ],
+    "usedByActions": [
+      "action-signin-sso"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-auth-password-reset",
+    "endpoint": "POST /auth/password-reset",
+    "module": "signin",
+    "usedByScreens": [
+      "screen-signin"
+    ],
+    "usedByActions": [
+      "action-signin-forgot-contact"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-dashboard",
+    "endpoint": "GET /teacher/dashboard",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-classes-today",
+    "endpoint": "GET /teacher/classes/today",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-grading-queue",
+    "endpoint": "GET /teacher/grading-queue",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-assessments"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-announcements",
+    "endpoint": "GET /announcements",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-classes",
+    "endpoint": "GET /teacher/classes",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-classes"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-class-summary",
+    "endpoint": "GET /teacher/class-summary",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-classes"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-classes-classid-students",
+    "endpoint": "GET /classes/{classId}/students",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-attendance"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-attendance-session",
+    "endpoint": "GET /attendance/session",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-attendance"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-attendance-session-id",
+    "endpoint": "PUT /attendance/session/{id}",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-attendance"
+    ],
+    "usedByActions": [
+      "action-attendance-mark-submit"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-lesson-plans",
+    "endpoint": "GET /teacher/lesson-plans",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-learning"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-teacher-lesson-plans-id",
+    "endpoint": "PUT /teacher/lesson-plans/{id}",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-learning"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-teacher-lesson-plans-id-publish",
+    "endpoint": "POST /teacher/lesson-plans/{id}/publish",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-learning"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-assessments",
+    "endpoint": "GET /teacher/assessments",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-assessments"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-classes",
+    "endpoint": "GET /classes",
+    "module": "exams",
+    "usedByScreens": [
+      "screen-exam-setup"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-subjects",
+    "endpoint": "GET /subjects",
+    "module": "exams",
+    "usedByScreens": [
+      "screen-exam-setup"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-assignments",
+    "endpoint": "POST /assignments",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-create-assignment"
+    ],
+    "usedByActions": [
+      "action-create-assignment-wizard"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-assignments-id-publish",
+    "endpoint": "POST /assignments/{id}/publish",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-create-assignment"
+    ],
+    "usedByActions": [
+      "action-create-assignment-wizard"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-submissions-queue",
+    "endpoint": "GET /submissions/queue",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-grade-submissions"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-submissions-id-grade",
+    "endpoint": "PUT /submissions/{id}/grade",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-grade-submissions"
+    ],
+    "usedByActions": [
+      "action-grade-submissions"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-exams-id-marks-entry",
+    "endpoint": "GET /exams/{id}/marks-entry",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-enter-marks"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-exams-id-marks-draft",
+    "endpoint": "PUT /exams/{id}/marks-draft",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-enter-marks"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-exams-id-marks-submit",
+    "endpoint": "POST /exams/{id}/marks-submit",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-enter-marks"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-messages-threads",
+    "endpoint": "GET /messages/threads",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-messages"
+    ],
+    "usedByActions": [
+      "action-messaging"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-messages-threads-id",
+    "endpoint": "GET /messages/threads/{id}",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-shared-messages-teacher"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-messages",
+    "endpoint": "POST /messages",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-shared-messages-teacher"
+    ],
+    "usedByActions": [
+      "action-messaging"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-navigation-modules",
+    "endpoint": "GET /navigation/modules",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-more"
+    ],
+    "usedByActions": [
+      "action-module-hub-links"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-student-dashboard",
+    "endpoint": "GET /student/dashboard",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-student-tasks",
+    "endpoint": "GET /student/tasks",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-tasks"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-student-timetable",
+    "endpoint": "GET /student/timetable",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-student-courses",
+    "endpoint": "GET /student/courses",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-learn"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-student-lessons-id",
+    "endpoint": "GET /student/lessons/{id}",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-learn"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-student-tasks-id-submission",
+    "endpoint": "POST /student/tasks/{id}/submission",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-tasks"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-parent-children",
+    "endpoint": "GET /parent/children",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-parent-dashboard",
+    "endpoint": "GET /parent/dashboard",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-parent-fees",
+    "endpoint": "GET /parent/fees",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-fees"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-payments-checkout",
+    "endpoint": "POST /payments/checkout",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-fees"
+    ],
+    "usedByActions": [
+      "action-parent-fees-payment"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-payments-id-status",
+    "endpoint": "GET /payments/{id}/status",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-fees"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-receipts-id",
+    "endpoint": "GET /receipts/{id}",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-fees"
+    ],
+    "usedByActions": [
+      "action-parent-fees-payment"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-leave-requests",
+    "endpoint": "GET /leave/requests",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-leave"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-leave-requests",
+    "endpoint": "POST /leave/requests",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-leave"
+    ],
+    "usedByActions": [
+      "action-leave-submit"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-admin-setup-health",
+    "endpoint": "GET /admin/setup-health",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-admin-dashboard",
+    "endpoint": "GET /admin/dashboard",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-students",
+    "endpoint": "GET /students",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-students"
+    ],
+    "usedByActions": [
+      "action-student-directory"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-students",
+    "endpoint": "POST /students",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-people"
+    ],
+    "usedByActions": [
+      "action-student-directory"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-academic-structure",
+    "endpoint": "GET /academic-structure",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-academics"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-academic-structure",
+    "endpoint": "PUT /academic-structure",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-academics"
+    ],
+    "usedByActions": [
+      "action-admin-academics"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-users",
+    "endpoint": "GET /users",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-users-roles"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-users-invite",
+    "endpoint": "POST /users/invite",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-users-roles"
+    ],
+    "usedByActions": [
+      "action-admin-users-roles"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "patch-users-id",
+    "endpoint": "PATCH /users/{id}",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-users-roles"
+    ],
+    "usedByActions": [
+      "action-admin-users-roles"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-roles",
+    "endpoint": "GET /roles",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-users-roles"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-roles-permissions",
+    "endpoint": "PUT /roles/permissions",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-users-roles"
+    ],
+    "usedByActions": [
+      "action-admin-users-roles"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-principal-dashboard",
+    "endpoint": "GET /principal/dashboard",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-approvals-pending",
+    "endpoint": "GET /approvals/pending",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-approvals",
+    "endpoint": "GET /approvals",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-approvals"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-approvals-id-approve",
+    "endpoint": "POST /approvals/{id}/approve",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-approvals"
+    ],
+    "usedByActions": [
+      "action-principal-approvals"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-approvals-id-reject",
+    "endpoint": "POST /approvals/{id}/reject",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-approvals"
+    ],
+    "usedByActions": [
+      "action-principal-approvals"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-finance-dashboard",
+    "endpoint": "GET /finance/dashboard",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-finance-dues",
+    "endpoint": "GET /finance/dues",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-finance-reconciliation-unmatched",
+    "endpoint": "GET /finance/reconciliation/unmatched",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-dashboard"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-finance-students-with-dues",
+    "endpoint": "GET /finance/students-with-dues",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-collect-payment"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-payments-offline",
+    "endpoint": "POST /payments/offline",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-collect-payment"
+    ],
+    "usedByActions": [
+      "action-accountant-collect-payment"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-receipts-id-print",
+    "endpoint": "POST /receipts/{id}/print",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-collect-payment"
+    ],
+    "usedByActions": [
+      "action-accountant-collect-payment"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-receipts-id-send",
+    "endpoint": "POST /receipts/{id}/send",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-collect-payment"
+    ],
+    "usedByActions": [
+      "action-accountant-collect-payment"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-fee-plans-year",
+    "endpoint": "GET /fee-plans/{year}",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-fee-setup"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-fee-plans-year",
+    "endpoint": "PUT /fee-plans/{year}",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-fee-setup"
+    ],
+    "usedByActions": [
+      "action-accountant-fee-setup"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-fee-plans-year-publish",
+    "endpoint": "POST /fee-plans/{year}/publish",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-fee-setup"
+    ],
+    "usedByActions": [
+      "action-accountant-fee-setup"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reconciliation-unmatched",
+    "endpoint": "GET /reconciliation/unmatched",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-reconciliation"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-reconciliation-id-match",
+    "endpoint": "POST /reconciliation/{id}/match",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-reconciliation"
+    ],
+    "usedByActions": [
+      "action-accountant-reconciliation"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reconciliation-export",
+    "endpoint": "GET /reconciliation/export",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-reconciliation"
+    ],
+    "usedByActions": [
+      "action-accountant-reconciliation"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-platform-tenants",
+    "endpoint": "GET /platform/tenants",
+    "module": "platform",
+    "usedByScreens": [
+      "screen-platform-schools"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-platform-tenants",
+    "endpoint": "POST /platform/tenants",
+    "module": "platform",
+    "usedByScreens": [
+      "screen-platform-dashboard"
+    ],
+    "usedByActions": [
+      "action-platform-dashboard"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-admissions-enquiries",
+    "endpoint": "GET /admissions/enquiries",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-enquiries"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-enquiries",
+    "endpoint": "POST /admissions/enquiries",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-enquiries"
+    ],
+    "usedByActions": [
+      "action-admissions-enquiries"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-enquiries-id-convert",
+    "endpoint": "POST /admissions/enquiries/{id}/convert",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-enquiries"
+    ],
+    "usedByActions": [
+      "action-admissions-enquiries"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-applications",
+    "endpoint": "POST /admissions/applications",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-applicant-portal"
+    ],
+    "usedByActions": [
+      "action-applicant-portal"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-applications-id-documents",
+    "endpoint": "POST /admissions/applications/{id}/documents",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-applicant-portal"
+    ],
+    "usedByActions": [
+      "action-applicant-portal"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-admissions-applications",
+    "endpoint": "GET /admissions/applications",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-review"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-applications-id-offer",
+    "endpoint": "POST /admissions/applications/{id}/offer",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-review"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-applications-id-reject",
+    "endpoint": "POST /admissions/applications/{id}/reject",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-review"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-applications-id-document-request",
+    "endpoint": "POST /admissions/applications/{id}/document-request",
+    "module": "admissions",
+    "usedByScreens": [
+      "screen-admissions-review"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-exams",
+    "endpoint": "GET /exams",
+    "module": "exams",
+    "usedByScreens": [
+      "screen-exams-list"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-exams",
+    "endpoint": "POST /exams",
+    "module": "exams",
+    "usedByScreens": [
+      "screen-exam-setup"
+    ],
+    "usedByActions": [
+      "action-exam-setup"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-exams-id-result-review",
+    "endpoint": "GET /exams/{id}/result-review",
+    "module": "exams",
+    "usedByScreens": [
+      "screen-exam-result-review"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-exams-id-publish-results",
+    "endpoint": "POST /exams/{id}/publish-results",
+    "module": "exams",
+    "usedByScreens": [
+      "screen-exam-result-review"
+    ],
+    "usedByActions": [
+      "action-result-review-publish"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-announcement-audiences",
+    "endpoint": "GET /announcement/audiences",
+    "module": "communication",
+    "usedByScreens": [
+      "screen-announcement"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-announcements",
+    "endpoint": "POST /announcements",
+    "module": "communication",
+    "usedByScreens": [
+      "screen-announcement"
+    ],
+    "usedByActions": [
+      "action-announcement"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-announcements-id-send",
+    "endpoint": "POST /announcements/{id}/send",
+    "module": "communication",
+    "usedByScreens": [
+      "screen-announcement"
+    ],
+    "usedByActions": [
+      "action-announcement"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-me",
+    "endpoint": "GET /me",
+    "module": "profile",
+    "usedByScreens": [
+      "screen-profile"
+    ],
+    "usedByActions": [
+      "action-profile-preferences"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "patch-me-preferences",
+    "endpoint": "PATCH /me/preferences",
+    "module": "profile",
+    "usedByScreens": [
+      "screen-profile"
+    ],
+    "usedByActions": [
+      "action-global-experience-switcher",
+      "action-profile-preferences",
+      "action-parent-dashboard"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-me-devices-id-sign-out",
+    "endpoint": "POST /me/devices/{id}/sign-out",
+    "module": "profile",
+    "usedByScreens": [
+      "screen-profile"
+    ],
+    "usedByActions": [
+      "action-profile-preferences"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-timetable-my",
+    "endpoint": "GET /timetable/my",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-timetable"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reports-class-insights",
+    "endpoint": "GET /reports/class-insights",
+    "module": "teacher",
+    "usedByScreens": [
+      "screen-teacher-reports"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-students-me-timetable",
+    "endpoint": "GET /students/me/timetable",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-timetable"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-students-me-results",
+    "endpoint": "GET /students/me/results",
+    "module": "student",
+    "usedByScreens": [
+      "screen-student-results"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-guardians-me-children-id-summary",
+    "endpoint": "GET /guardians/me/children/{id}/summary",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-child"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-guardians-me-children-id-attendance",
+    "endpoint": "GET /guardians/me/children/{id}/attendance",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-attendance"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-guardians-me-children-id-learning",
+    "endpoint": "GET /guardians/me/children/{id}/learning",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-learning"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-guardians-me-children-id-results",
+    "endpoint": "GET /guardians/me/children/{id}/results",
+    "module": "parent",
+    "usedByScreens": [
+      "screen-parent-results"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-navigation-modules-area-operations",
+    "endpoint": "GET /navigation/modules?area=operations",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-operations"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-navigation-modules-area-communication",
+    "endpoint": "GET /navigation/modules?area=communication",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-communication"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reports",
+    "endpoint": "GET /reports",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-reports"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-navigation-modules-area-settings",
+    "endpoint": "GET /navigation/modules?area=settings",
+    "module": "admin",
+    "usedByScreens": [
+      "screen-admin-settings"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reports-academics",
+    "endpoint": "GET /reports/academics",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-academics"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-staff-summary",
+    "endpoint": "GET /staff/summary",
+    "module": "principal",
+    "usedByScreens": [
+      "screen-principal-staff"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reports-finance",
+    "endpoint": "GET /reports/finance",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-reports"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-finance-fees-summary",
+    "endpoint": "GET /finance/fees/summary",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-fees"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-finance-settings",
+    "endpoint": "GET /finance/settings",
+    "module": "accountant",
+    "usedByScreens": [
+      "screen-accountant-settings"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-platform-plans",
+    "endpoint": "GET /platform/plans",
+    "module": "platform",
+    "usedByScreens": [
+      "screen-platform-plans"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-platform-operations",
+    "endpoint": "GET /platform/operations",
+    "module": "platform",
+    "usedByScreens": [
+      "screen-platform-operations"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-platform-support-cases",
+    "endpoint": "GET /platform/support/cases",
+    "module": "platform",
+    "usedByScreens": [
+      "screen-platform-support"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-platform-reports",
+    "endpoint": "GET /platform/reports",
+    "module": "platform",
+    "usedByScreens": [
+      "screen-platform-reports"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-platform-settings",
+    "endpoint": "GET /platform/settings",
+    "module": "platform",
+    "usedByScreens": [
+      "screen-platform-settings"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-operations-timetable",
+    "endpoint": "GET /operations/timetable",
+    "module": "operations",
+    "usedByScreens": [
+      "screen-operations-timetable"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-library-summary",
+    "endpoint": "GET /library/summary",
+    "module": "operations",
+    "usedByScreens": [
+      "screen-operations-library"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-transport-summary",
+    "endpoint": "GET /transport/summary",
+    "module": "operations",
+    "usedByScreens": [
+      "screen-operations-transport"
+    ],
+    "usedByActions": [],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-contexts",
+    "endpoint": "GET /contexts",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-context-current-school"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-session-context",
+    "endpoint": "POST /session/context",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-context-current-school",
+      "action-global-context-static-options"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-me-roles",
+    "endpoint": "GET /me/roles",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-role-switcher"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-session-role",
+    "endpoint": "POST /session/role",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-role-switcher"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-search-q",
+    "endpoint": "GET /search?q=",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-search"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-notifications",
+    "endpoint": "GET /notifications",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-notifications"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-notifications-id-read",
+    "endpoint": "POST /notifications/{id}/read",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-notifications"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-support-requests",
+    "endpoint": "POST /support/requests",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-help-support"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-auth-logout",
+    "endpoint": "POST /auth/logout",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-global-profile-menu-signout"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-public-school-contact",
+    "endpoint": "GET /public/school-contact",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-signin-forgot-contact"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "none-for-navigation-destination-apis-required",
+    "endpoint": "none for navigation; destination APIs required",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-teacher-dashboard-navigation"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-teacher-classes-id",
+    "endpoint": "GET /teacher/classes/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-teacher-classes-open-attendance-learning"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-lesson-plans-id",
+    "endpoint": "PUT /lesson-plans/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-learning-publish-save-select"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-lesson-plans-id-publish",
+    "endpoint": "POST /lesson-plans/{id}/publish",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-learning-publish-save-select"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "patch-assignments-id",
+    "endpoint": "PATCH /assignments/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-create-assignment-wizard"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "put-marks-draft",
+    "endpoint": "PUT /marks/draft",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-enter-marks"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-marks-submit",
+    "endpoint": "POST /marks/submit",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-enter-marks"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-lessons-id",
+    "endpoint": "GET /lessons/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-student-learn-continue"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-learning-progress",
+    "endpoint": "POST /learning/progress",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-student-learn-continue"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-tasks-id-submissions",
+    "endpoint": "POST /tasks/{id}/submissions",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-student-tasks-submit"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "destination-apis",
+    "endpoint": "destination APIs",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-parent-dashboard"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-payments-id",
+    "endpoint": "GET /payments/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-parent-fees-payment"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "destination-specific",
+    "endpoint": "destination-specific",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-admin-dashboard",
+      "action-accountant-dashboard",
+      "action-exams-list"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-students-id",
+    "endpoint": "GET /students/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-student-directory"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-platform-tenants-id",
+    "endpoint": "GET /platform/tenants/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-platform-dashboard"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-admissions-enquiries-id-call-log",
+    "endpoint": "POST /admissions/enquiries/{id}/call-log",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-admissions-enquiries"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-applications-id-interview",
+    "endpoint": "POST /applications/{id}/interview",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-application-review"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-applications-id-document-request",
+    "endpoint": "POST /applications/{id}/document-request",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-application-review"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-applications-id-offer",
+    "endpoint": "POST /applications/{id}/offer",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-application-review"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-applications-id-reject",
+    "endpoint": "POST /applications/{id}/reject",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-application-review"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reports-id",
+    "endpoint": "GET /reports/{id}",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-reports"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-reports-preview",
+    "endpoint": "POST /reports/preview",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-reports"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "post-reports-views",
+    "endpoint": "POST /reports/views",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-reports"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-reports-export",
+    "endpoint": "GET /reports/export",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-reports"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "get-students-id-report-card-pdf",
+    "endpoint": "GET /students/{id}/report-card.pdf",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-report-card-download"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "none",
+    "endpoint": "none",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-states-gallery"
+    ],
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "varies-by-action",
+    "endpoint": "varies by action",
+    "module": "action-derived",
+    "usedByScreens": [],
+    "usedByActions": [
+      "action-detected-empty-and-placeholder-patterns"
+    ],
+    "status": "required-not-implemented"
+  }
+]

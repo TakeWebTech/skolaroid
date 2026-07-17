@@ -1,0 +1,771 @@
+[
+  {
+    "id": "anonymous",
+    "screens": [
+      "screen-signin"
+    ],
+    "actions": [
+      "action-signin-submit",
+      "action-signin-sso",
+      "action-signin-forgot-contact"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "teacher.dashboard.view",
+    "screens": [
+      "screen-teacher-dashboard"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "teacher.classes.view",
+    "screens": [
+      "screen-teacher-classes"
+    ],
+    "actions": [
+      "action-teacher-classes-open-attendance-learning"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "attendance.mark",
+    "screens": [
+      "screen-teacher-attendance"
+    ],
+    "actions": [
+      "action-attendance-mark-submit"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "learning.plan.manage",
+    "screens": [
+      "screen-teacher-learning"
+    ],
+    "actions": [
+      "action-learning-publish-save-select"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "assessments.view",
+    "screens": [
+      "screen-teacher-assessments"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "assignments.create",
+    "screens": [
+      "screen-teacher-create-assignment"
+    ],
+    "actions": [
+      "action-create-assignment-wizard"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "submissions.grade",
+    "screens": [
+      "screen-teacher-grade-submissions"
+    ],
+    "actions": [
+      "action-grade-submissions"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "marks.enter",
+    "screens": [
+      "screen-teacher-enter-marks"
+    ],
+    "actions": [
+      "action-enter-marks"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "messages.send",
+    "screens": [
+      "screen-parent-messages"
+    ],
+    "actions": [
+      "action-messaging"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "teacher.modules.view",
+    "screens": [
+      "screen-teacher-more"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "student.dashboard.view",
+    "screens": [
+      "screen-student-dashboard"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "learning.view",
+    "screens": [
+      "screen-student-learn"
+    ],
+    "actions": [
+      "action-student-learn-continue"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "tasks.submit",
+    "screens": [
+      "screen-student-tasks"
+    ],
+    "actions": [
+      "action-student-tasks-submit"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "parent.dashboard.view",
+    "screens": [
+      "screen-parent-dashboard"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "fees.pay",
+    "screens": [
+      "screen-parent-fees"
+    ],
+    "actions": [
+      "action-parent-fees-payment"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "leave.request.create",
+    "screens": [
+      "screen-parent-leave"
+    ],
+    "actions": [
+      "action-leave-submit"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "admin.dashboard.view",
+    "screens": [
+      "screen-admin-dashboard"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "students.view",
+    "screens": [
+      "screen-principal-students"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "academics.manage",
+    "screens": [
+      "screen-admin-academics"
+    ],
+    "actions": [
+      "action-admin-academics"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "users.manage",
+    "screens": [
+      "screen-admin-users-roles"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "principal.dashboard.view",
+    "screens": [
+      "screen-principal-dashboard"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "approvals.decide",
+    "screens": [
+      "screen-principal-approvals"
+    ],
+    "actions": [
+      "action-principal-approvals"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "finance.dashboard.view",
+    "screens": [
+      "screen-accountant-dashboard"
+    ],
+    "actions": [
+      "action-accountant-dashboard"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "payments.collect",
+    "screens": [
+      "screen-accountant-collect-payment"
+    ],
+    "actions": [
+      "action-accountant-collect-payment"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "fee-plans.manage",
+    "screens": [
+      "screen-accountant-fee-setup"
+    ],
+    "actions": [
+      "action-accountant-fee-setup"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "reconciliation.manage",
+    "screens": [
+      "screen-accountant-reconciliation"
+    ],
+    "actions": [
+      "action-accountant-reconciliation"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "platform.tenants.manage",
+    "screens": [
+      "screen-platform-dashboard"
+    ],
+    "actions": [
+      "action-platform-dashboard"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "admissions.enquiries.manage",
+    "screens": [
+      "screen-admissions-enquiries"
+    ],
+    "actions": [
+      "action-admissions-enquiries"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "anonymous or applicant.session",
+    "screens": [
+      "screen-admissions-applicant-portal"
+    ],
+    "actions": [
+      "action-applicant-portal"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "admissions.applications.decide",
+    "screens": [
+      "screen-admissions-review"
+    ],
+    "actions": [
+      "action-application-review"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "exams.view",
+    "screens": [
+      "screen-exams-list"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "exams.create",
+    "screens": [
+      "screen-exam-setup"
+    ],
+    "actions": [
+      "action-exam-setup"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "results.publish",
+    "screens": [
+      "screen-exam-result-review"
+    ],
+    "actions": [
+      "action-result-review-publish"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "announcements.send",
+    "screens": [
+      "screen-announcement"
+    ],
+    "actions": [
+      "action-announcement"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "profile.manage",
+    "screens": [
+      "screen-profile"
+    ],
+    "actions": [
+      "action-global-experience-switcher",
+      "action-profile-preferences"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "developer.preview",
+    "screens": [
+      "screen-states-gallery"
+    ],
+    "actions": [
+      "action-states-gallery"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "timetable.view",
+    "screens": [
+      "screen-teacher-timetable"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "reports.teacher.view",
+    "screens": [
+      "screen-teacher-reports"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "student.timetable.view",
+    "screens": [
+      "screen-student-timetable"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "student.results.view",
+    "screens": [
+      "screen-student-results"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "guardian.child.view",
+    "screens": [
+      "screen-parent-child"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "guardian.attendance.view",
+    "screens": [
+      "screen-parent-attendance"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "guardian.learning.view",
+    "screens": [
+      "screen-parent-learning"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "guardian.results.view",
+    "screens": [
+      "screen-parent-results"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "operations.view",
+    "screens": [
+      "screen-admin-operations"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "communication.view",
+    "screens": [
+      "screen-admin-communication"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "reports.admin.view",
+    "screens": [
+      "screen-admin-reports"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "settings.view",
+    "screens": [
+      "screen-admin-settings"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "reports.principal.view",
+    "screens": [
+      "screen-principal-reports"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "staff.view",
+    "screens": [
+      "screen-principal-staff"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "reports.finance.view",
+    "screens": [
+      "screen-accountant-reports"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "fees.view",
+    "screens": [
+      "screen-accountant-fees"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "finance.settings.view",
+    "screens": [
+      "screen-accountant-settings"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "platform.tenants.view",
+    "screens": [
+      "screen-platform-schools"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "platform.plans.view",
+    "screens": [
+      "screen-platform-plans"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "platform.operations.view",
+    "screens": [
+      "screen-platform-operations"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "platform.support.view",
+    "screens": [
+      "screen-platform-support"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "platform.reports.view",
+    "screens": [
+      "screen-platform-reports"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "platform.settings.view",
+    "screens": [
+      "screen-platform-settings"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "operations.timetable.view",
+    "screens": [
+      "screen-operations-timetable"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "library.view",
+    "screens": [
+      "screen-operations-library"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "transport.view",
+    "screens": [
+      "screen-operations-transport"
+    ],
+    "actions": [],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "context.switch",
+    "screens": [],
+    "actions": [
+      "action-global-context-current-school",
+      "action-global-context-static-options"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "role.switch.assigned",
+    "screens": [],
+    "actions": [
+      "action-global-role-switcher"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "search.use",
+    "screens": [],
+    "actions": [
+      "action-global-search"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "notifications.view",
+    "screens": [],
+    "actions": [
+      "action-global-notifications"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "support.request.create",
+    "screens": [],
+    "actions": [
+      "action-global-help-support"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "authenticated",
+    "screens": [],
+    "actions": [
+      "action-global-profile-menu-signout"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "destination-specific teacher permissions",
+    "screens": [],
+    "actions": [
+      "action-teacher-dashboard-navigation"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "module-specific",
+    "screens": [],
+    "actions": [
+      "action-module-hub-links"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "parent.child.view",
+    "screens": [],
+    "actions": [
+      "action-parent-dashboard"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "admin.setup.manage",
+    "screens": [],
+    "actions": [
+      "action-admin-dashboard"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "students.view, students.create",
+    "screens": [],
+    "actions": [
+      "action-student-directory"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "users.manage, roles.manage",
+    "screens": [],
+    "actions": [
+      "action-admin-users-roles"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "exams.create, results.review",
+    "screens": [],
+    "actions": [
+      "action-exams-list"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "reports.view, reports.export",
+    "screens": [],
+    "actions": [
+      "action-reports"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "results.view",
+    "screens": [],
+    "actions": [
+      "action-report-card-download"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  },
+  {
+    "id": "varies by action",
+    "screens": [],
+    "actions": [
+      "action-detected-empty-and-placeholder-patterns"
+    ],
+    "serverEnforced": false,
+    "status": "required-not-implemented"
+  }
+]
