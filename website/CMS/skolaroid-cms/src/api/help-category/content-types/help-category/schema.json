@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "help_category",
+  "info": {
+    "singularName": "help-category",
+    "pluralName": "help-categories",
+    "displayName": "help category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    }
+  }
+}

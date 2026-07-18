@@ -4,7 +4,7 @@ import { PrismaService } from "../database/prisma.service";
 
 export interface HealthResponse {
   status: "ok";
-  service: "smls-backend";
+  service: "skolaroid-backend";
   database: "ok" | "unavailable";
 }
 
@@ -20,7 +20,7 @@ export class HealthController {
       required: ["status", "service"],
       properties: {
         status: { type: "string", enum: ["ok"] },
-        service: { type: "string", enum: ["smls-backend"] }
+        service: { type: "string", enum: ["skolaroid-backend"] }
       }
     }
   })
@@ -29,7 +29,7 @@ export class HealthController {
 
     return {
       status: "ok",
-      service: "smls-backend",
+      service: "skolaroid-backend",
       database
     };
   }

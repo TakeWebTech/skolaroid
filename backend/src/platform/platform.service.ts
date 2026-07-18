@@ -1,9 +1,10 @@
-import { BadRequestException, ConflictException, ForbiddenException, Inject, Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, ConflictException, ForbiddenException, Inject, Injectable, NotFoundException, Optional } from "@nestjs/common";
 import { randomBytes, createHash } from "node:crypto";
 import * as argon2 from "argon2";
 import type { Prisma } from "@prisma/client";
 import { AuthenticatedUser } from "../auth/jwt-auth.guard";
 import { PrismaService } from "../database/prisma.service";
+import { PluginsService } from "../plugins/plugins.service";
 import { ChangeTenantUserRoleDto, CreatePlatformPlanDto, CreatePlatformTenantDto, PlatformSupportActionDto, RequestPlatformTenantEditOtpDto, UpdatePlatformTenantProfileDto, VerifyPlatformTenantEditOtpDto } from "./platform.dto";
 
 const DEVELOPMENT_EDIT_OTP = "ABC123";
@@ -14,7 +15,10 @@ const EDIT_TOKEN_TTL_MINUTES = 15;
 
 @Injectable()
 export class PlatformService {
-  constructor(@Inject(PrismaService) private readonly prisma: PrismaService) {}
+  constructor(
+    @Inject(PrismaService) private readonly prisma: PrismaService,
+    @Optional() @Inject(PluginsService) private readonly plugins?: PluginsService
+  ) {}
 
   async organizationIdSuggestion(name: string, city?: string) {
     const base = this.slug(name || "school").slice(0, 18);
@@ -473,6 +477,7 @@ export class PlatformService {
       }
     });
     await this.audit(user, "platform.plan.create", plan.id, { code });
+    await this.plugins?.enqueuePlanSync(plan.id);
     return { id: plan.id, code: plan.code, name: plan.name, billingCycle: plan.billingCycle.toLowerCase(), basePrice: plan.basePrice, description: plan.description, subscriptions: 0 };
   }
 

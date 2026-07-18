@@ -21,7 +21,7 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle("SMLS API")
+    .setTitle("Skolaroid API")
     .setDescription("School Management and Learning System API")
     .setVersion("0.1.0")
     .build();

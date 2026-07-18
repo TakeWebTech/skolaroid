@@ -1,4 +1,4 @@
--- SMLS identity foundation.
+-- Skolaroid identity foundation.
 -- UUID identifiers are required by the product prompt. Tenant and FK indexes are
 -- explicit because Postgres does not automatically index foreign key columns.
 

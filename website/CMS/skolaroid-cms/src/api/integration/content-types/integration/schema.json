@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "integration",
+  "info": {
+    "singularName": "integration",
+    "pluralName": "integrations",
+    "displayName": "integration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": false
+    },
+    "availabilityStatus": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "planned",
+        "custom"
+      ],
+      "default": "planned"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

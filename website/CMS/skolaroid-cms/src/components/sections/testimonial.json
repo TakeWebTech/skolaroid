@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_sections_testimonial",
+  "info": {
+    "displayName": "testimonial",
+    "icon": "layer"
+  },
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "personName": {
+      "type": "string",
+      "required": true
+    },
+    "personRole": {
+      "type": "string",
+      "required": false
+    },
+    "organisation": {
+      "type": "string",
+      "required": false
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

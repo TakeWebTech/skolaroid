@@ -104,7 +104,7 @@ function Brand() {
         <Icon name="GraduationCap" className="size-5" />
       </span>
       <div className="leading-tight">
-        <p className="font-semibold">SMLS</p>
+        <p className="font-semibold">Skolaroid</p>
         <p className="text-[11px] text-muted-foreground">{t("School Management")}</p>
       </div>
     </div>
@@ -118,7 +118,7 @@ function PlatformScope() {
         <Icon name="ShieldCheck" className="size-4" />
       </span>
       <span className="hidden min-w-0 sm:block">
-        <span className="block truncate font-medium leading-tight">SMLS Platform</span>
+        <span className="block truncate font-medium leading-tight">Skolaroid Platform</span>
         <span className="block truncate text-[12px] leading-tight text-muted-foreground">All tenants</span>
       </span>
     </div>

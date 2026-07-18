@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_pricing_pricing_feature",
+  "info": {
+    "displayName": "pricing feature",
+    "icon": "layer"
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "included": {
+      "type": "boolean",
+      "default": true
+    },
+    "note": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

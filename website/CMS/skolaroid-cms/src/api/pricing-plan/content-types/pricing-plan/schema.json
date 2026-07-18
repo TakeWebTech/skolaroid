@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pricing_plan",
+  "info": {
+    "singularName": "pricing-plan",
+    "pluralName": "pricing-plans",
+    "displayName": "pricing plan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "tagline": {
+      "type": "string",
+      "required": false
+    },
+    "audience": {
+      "type": "string",
+      "required": false
+    },
+    "highlight": {
+      "type": "boolean",
+      "default": false
+    },
+    "basePrice": {
+      "type": "decimal"
+    },
+    "billingCycle": {
+      "type": "enumeration",
+      "enum": [
+        "monthly",
+        "annual",
+        "custom"
+      ],
+      "default": "custom"
+    },
+    "features": {
+      "type": "component",
+      "component": "pricing.pricing-feature",
+      "repeatable": true
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

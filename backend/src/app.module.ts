@@ -11,8 +11,9 @@ import { FinanceModule } from "./finance/finance.module";
 import { HealthModule } from "./health/health.module";
 import { PeopleModule } from "./people/people.module";
 import { PlatformModule } from "./platform/platform.module";
+import { PluginsModule } from "./plugins/plugins.module";
 
 @Module({
-  imports: [DatabaseModule, HealthModule, AuthModule, AttendanceModule, PeopleModule, AssignmentsModule, ExamsModule, FinanceModule, AdmissionsModule, CommunicationModule, AcademicsModule, PlatformModule]
+  imports: [DatabaseModule, HealthModule, AuthModule, AttendanceModule, PeopleModule, AssignmentsModule, ExamsModule, FinanceModule, AdmissionsModule, CommunicationModule, AcademicsModule, PlatformModule, PluginsModule]
 })
 export class AppModule {}

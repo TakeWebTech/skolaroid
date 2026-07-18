@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_sections_content_section",
+  "info": {
+    "displayName": "content section",
+    "icon": "layer"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "media-left",
+        "media-right",
+        "centered"
+      ],
+      "default": "text"
+    }
+  }
+}

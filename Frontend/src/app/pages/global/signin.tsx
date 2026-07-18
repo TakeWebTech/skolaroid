@@ -41,7 +41,7 @@ export function SignIn() {
       <div className="w-full max-w-sm">
         <div className="mb-6 flex flex-col items-center gap-2 text-center">
           <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-primary-foreground"><Icon name="GraduationCap" className="size-7" /></span>
-          <h1 className="text-[24px] font-semibold">{t("Sign in to SMLS")}</h1>
+          <h1 className="text-[24px] font-semibold">{t("Sign in to Skolaroid")}</h1>
           <p className="text-[14px] text-muted-foreground">{SCHOOL.name}</p>
         </div>
         <form className="space-y-4 rounded-2xl border border-border bg-card p-6" onSubmit={submit}>
@@ -55,7 +55,7 @@ export function SignIn() {
           <div className="relative py-1 text-center text-[12px] text-muted-foreground"><span className="bg-card px-2">{t("or")}</span><div className="absolute inset-x-0 top-1/2 -z-10 h-px bg-border" /></div>
           <Button type="button" variant="outline" size="lg" className="w-full" disabled><Icon name="KeyRound" className="size-4" /> {t("Continue with SSO")}</Button>
         </form>
-        <p className="mt-4 text-center text-[13px] text-muted-foreground">{t("A teacher who can use WhatsApp can use SMLS. Need help?")} <button className="text-primary hover:underline">{t("Contact your school")}</button>.</p>
+        <p className="mt-4 text-center text-[13px] text-muted-foreground">{t("A teacher who can use WhatsApp can use Skolaroid. Need help?")} <button className="text-primary hover:underline">{t("Contact your school")}</button>.</p>
       </div>
     </div>
   );

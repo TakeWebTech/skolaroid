@@ -87,7 +87,7 @@ describe("MeController", () => {
   it("returns the current server-authorized user context", async () => {
     const token = await jwt.signAsync(
       { sub: "user-1", sid: "session-1", tenantIds: ["tenant-1"] },
-      { issuer: "smls", audience: "smls-web" }
+      { issuer: "skolaroid", audience: "skolaroid-web" }
     );
 
     await request(app.getHttpServer())
@@ -110,7 +110,7 @@ describe("MeController", () => {
     await createApp(null);
     const token = await jwt.signAsync(
       { sub: "user-1", sid: "session-1", tenantIds: ["tenant-1"] },
-      { issuer: "smls", audience: "smls-web" }
+      { issuer: "skolaroid", audience: "skolaroid-web" }
     );
 
     await request(app.getHttpServer())

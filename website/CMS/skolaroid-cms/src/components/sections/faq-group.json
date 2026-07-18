@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_faq_group",
+  "info": {
+    "displayName": "faq group",
+    "icon": "layer"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "faqs": {
+      "type": "json"
+    }
+  }
+}

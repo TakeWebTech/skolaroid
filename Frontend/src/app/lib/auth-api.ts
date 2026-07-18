@@ -1,7 +1,7 @@
 import type { RoleId } from "./types";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://127.0.0.1:3000/api/v1";
-const AUTH_STORAGE_KEY = "smls.auth";
+const AUTH_STORAGE_KEY = "skolaroid.auth";
 
 export interface AuthRole {
   membershipId: string;
@@ -44,7 +44,7 @@ export class ApiError extends Error {
 
 export class NetworkError extends Error {
   constructor() {
-    super("Cannot reach the SMLS API. Check that the backend server is running on port 3000.");
+    super("Cannot reach the Skolaroid API. Check that the backend server is running on port 3000.");
   }
 }
 

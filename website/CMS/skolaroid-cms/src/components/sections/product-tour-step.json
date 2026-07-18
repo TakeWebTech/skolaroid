@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_product_tour_step",
+  "info": {
+    "displayName": "product tour step",
+    "icon": "layer"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

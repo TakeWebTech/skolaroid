@@ -1,0 +1,48 @@
+services:
+  strapi-db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${CMS_DB_NAME:-skolaroid_cms}
+      POSTGRES_USER: ${CMS_DB_USER:-skolaroid}
+      POSTGRES_PASSWORD: ${CMS_DB_PASSWORD:-change-me}
+    volumes:
+      - strapi_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${CMS_DB_USER:-skolaroid} -d ${CMS_DB_NAME:-skolaroid_cms}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  strapi:
+    build:
+      context: ./CMS/skolaroid-cms
+    restart: unless-stopped
+    depends_on:
+      strapi-db:
+        condition: service_healthy
+    ports:
+      - "${STRAPI_PORT:-1337}:1337"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 1337
+      NODE_ENV: production
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      JWT_SECRET: ${JWT_SECRET}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: strapi-db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${CMS_DB_NAME:-skolaroid_cms}
+      DATABASE_USERNAME: ${CMS_DB_USER:-skolaroid}
+      DATABASE_PASSWORD: ${CMS_DB_PASSWORD:-change-me}
+      DATABASE_SSL: "false"
+    volumes:
+      - strapi_uploads:/app/public/uploads
+
+volumes:
+  strapi_db_data:
+  strapi_uploads:

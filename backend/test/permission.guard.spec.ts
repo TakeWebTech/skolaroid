@@ -50,7 +50,7 @@ async function createApp(permissionKeys: string[]) {
   const jwt = moduleRef.get(JwtService);
   const token = await jwt.signAsync(
     { sub: "user-1", sid: "session-1", tenantIds: ["tenant-1"] },
-    { issuer: "smls", audience: "smls-web" }
+    { issuer: "skolaroid", audience: "skolaroid-web" }
   );
   return { app, token };
 }

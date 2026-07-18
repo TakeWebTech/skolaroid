@@ -16,8 +16,8 @@ export class TokenService {
   createAccessToken(claims: AccessTokenClaims): Promise<string> {
     return this.jwt.signAsync(claims, {
       expiresIn: "15m",
-      issuer: "smls",
-      audience: "smls-web"
+      issuer: "skolaroid",
+      audience: "skolaroid-web"
     });
   }
 

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_asset",
+  "info": {
+    "singularName": "media-asset",
+    "pluralName": "media-assets",
+    "displayName": "media asset"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "asset": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "altText": {
+      "type": "string",
+      "required": false
+    },
+    "caption": {
+      "type": "string",
+      "required": false
+    },
+    "usageRights": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

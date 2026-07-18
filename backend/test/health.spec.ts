@@ -35,7 +35,7 @@ describe("HealthController", () => {
       .expect(200)
       .expect({
         status: "ok",
-        service: "smls-backend",
+        service: "skolaroid-backend",
         database: "ok"
       });
   });

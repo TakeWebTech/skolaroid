@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_logo",
+  "info": {
+    "displayName": "logo",
+    "icon": "layer"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

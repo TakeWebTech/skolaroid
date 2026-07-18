@@ -41,6 +41,7 @@ const SEARCH_BY_ROLE: Record<RoleId, SearchItem[]> = {
     { id: "platform-schools", title: "Schools", subtitle: "Tenant directory and organization IDs", to: "/platform/schools", keywords: ["school", "organization", "organisation", "tenant"], icon: "Building2" },
     { id: "platform-st-xavier", title: "St. Xavier High", subtitle: "ORG-SX-002 · Trial expiring", to: "/platform/schools", keywords: ["xavier", "org-sx-002", "trial"], icon: "Building2" },
     { id: "platform-plans", title: "Plans & entitlements", subtitle: "Plans, feature flags, subscriptions", to: "/platform/plans", keywords: ["plan", "plans", "subscription", "entitlement"], icon: "Package" },
+    { id: "platform-plugins", title: "Plugin marketplace", subtitle: "Marketplace, installed plugins and plugin actions", to: "/platform/plugins", keywords: ["plugin", "plugins", "marketplace", "strapi", "erpnext", "integration", "installed"], icon: "Plug" },
     { id: "platform-domains", title: "Domains", subtitle: "Tenant domains, SSL and DNS health", to: "/platform/operations", keywords: ["domain", "website", "ssl", "dns"], icon: "Globe" },
     { id: "platform-audit", title: "Audit log", subtitle: "Platform settings and access audit", to: "/platform/settings", keywords: ["audit", "setting", "settings", "permission", "technical support"], icon: "ScrollText" },
   ],

@@ -12,6 +12,7 @@ import { InputOTP, InputOTPGroup, InputOTPSlot } from "../../components/ui/input
 import { Icon } from "../../components/shared/icon";
 import { TENANTS } from "../../lib/mock-data";
 import { changePlatformTenantUserRole, createPlatformPlan, createPlatformTenant, getPlatformTenantProfile, listPlatformPlans, listPlatformTenants, PlatformPlanRow, PlatformTenantProfile, PlatformTenantRow, requestPlatformTenantEditOtp, resetPlatformTenantUserPassword, updatePlatformTenantProfile, verifyPlatformTenantEditOtp, suggestOrganizationId } from "../../lib/platform-api";
+import { getPlatformPluginSettings, installPlatformPlugin, listPlugins, listPluginSyncJobs, runPluginSync, updatePlatformPluginSettings, type PluginDefinition, type PluginSyncJob } from "../../lib/plugins-api";
 import { toast } from "sonner";
 
 const HEALTH = { good: "success", watch: "warning", risk: "danger" } as const;
@@ -50,6 +51,7 @@ export function PlatformDashboard() {
 
       <div className="grid gap-4 lg:grid-cols-3">
         <QuickAction icon="Building2" label="Schools" hint="Tenants, org IDs, plans and health" onClick={() => navigate("/platform/schools")} />
+        <QuickAction icon="Plug" label="Plugins" hint="Marketplace, installs and actions" tone="primary" onClick={() => navigate("/platform/plugins")} />
         <QuickAction icon="LifeBuoy" label="Support queue" hint="Principal and admin cases" tone="info" onClick={() => navigate("/platform/support")} />
         <QuickAction icon="Activity" label="Operations" hint="Health, incidents and domains" tone="success" onClick={() => navigate("/platform/operations")} />
       </div>
@@ -400,7 +402,7 @@ export function PlatformSchoolProfile() {
             </div>
           </SectionCard>
 
-          <SectionCard title="Contacts and onboarding" description="Primary admin and SMLS implementation ownership.">
+          <SectionCard title="Contacts and onboarding" description="Primary admin and Skolaroid implementation ownership.">
             <div className="grid gap-4 md:grid-cols-2">
               <ProfileField label="School admin" value={profile.contact.adminName} />
               <ProfileField label="Admin email" value={profile.contact.adminEmail} />
@@ -864,6 +866,273 @@ export function PlatformPlans() {
   );
 }
 
+export function PlatformPlugins() {
+  const [view, setView] = useState<"marketplace" | "installed" | "actions">("marketplace");
+  const [plugins, setPlugins] = useState<PluginDefinition[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [busyKey, setBusyKey] = useState<string | null>(null);
+  const [selectedPlugin, setSelectedPlugin] = useState<PluginDefinition | null>(null);
+  const [settingsPlugin, setSettingsPlugin] = useState<PluginDefinition | null>(null);
+  const [settingsForm, setSettingsForm] = useState<Record<string, string>>({});
+  const [settingsSaving, setSettingsSaving] = useState(false);
+  const [syncJobs, setSyncJobs] = useState<PluginSyncJob[]>([]);
+  const [syncRunning, setSyncRunning] = useState(false);
+
+  function loadPlugins() {
+    setLoading(true);
+    Promise.all([listPlugins(), listPluginSyncJobs()])
+      .then(([pluginRows, jobRows]) => {
+        setPlugins(pluginRows);
+        setSyncJobs(jobRows);
+      })
+      .catch((error: Error) => toast.error(error.message))
+      .finally(() => setLoading(false));
+  }
+
+  useEffect(() => {
+    loadPlugins();
+  }, []);
+
+  async function install(key: string) {
+    setBusyKey(key);
+    try {
+      await installPlatformPlugin(key);
+      toast.success("Plugin installed for platform");
+      loadPlugins();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Plugin install failed");
+    } finally {
+      setBusyKey(null);
+    }
+  }
+
+  async function runSync(retryFailed = false) {
+    setSyncRunning(true);
+    try {
+      const result = await runPluginSync(20, retryFailed);
+      if (result.failed > 0) {
+        toast.error(`Processed ${result.processed} jobs: ${result.succeeded} succeeded, ${result.failed} failed`);
+      } else {
+        toast.success(`Processed ${result.processed} jobs: ${result.succeeded} succeeded`);
+      }
+      loadPlugins();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Plugin sync failed");
+    } finally {
+      setSyncRunning(false);
+    }
+  }
+
+  async function openSettings(plugin: PluginDefinition) {
+    setSettingsPlugin(plugin);
+    try {
+      const settings = await getPlatformPluginSettings(plugin.key);
+      setSettingsForm(defaultPluginSettings(plugin.key, settings.config));
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not load plugin settings");
+      setSettingsForm(defaultPluginSettings(plugin.key, {}));
+    }
+  }
+
+  async function saveSettings() {
+    if (!settingsPlugin) return;
+    setSettingsSaving(true);
+    try {
+      await updatePlatformPluginSettings(settingsPlugin.key, settingsForm);
+      toast.success("Plugin settings saved");
+      setSettingsPlugin(null);
+      loadPlugins();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not save plugin settings");
+    } finally {
+      setSettingsSaving(false);
+    }
+  }
+
+  const installed = plugins.filter((plugin) => platformInstallation(plugin));
+
+  return (
+    <div className="space-y-6">
+      <PageHeader
+        title="Plugin marketplace"
+        subtitle="Install and manage platform plugins without mixing website CMS or ERPNext logic into the core engine."
+        actions={<Button variant="outline" onClick={loadPlugins} disabled={loading}><Icon name="RefreshCw" className="size-4" /> Refresh</Button>}
+      />
+
+      <div className="grid gap-4 md:grid-cols-3">
+        <PlatformAction active={view === "marketplace"} icon="Store" label="Marketplace" hint="All available plugins" onClick={() => setView("marketplace")} />
+        <PlatformAction active={view === "installed"} icon="PlugZap" label="Installed plugins" hint="Plugins active on platform" tone="success" onClick={() => setView("installed")} />
+        <PlatformAction active={view === "actions"} icon="Wrench" label="Plugin actions" hint="Updates, sync and status" tone="info" onClick={() => setView("actions")} />
+      </div>
+
+      {view === "marketplace" && (
+        <SectionCard title="Marketplace" description="Available plugins registered by the Skolaroid plugin registry.">
+          {loading ? (
+            <EmptyState icon="LoaderCircle" title="Loading plugins" description="Reading the platform plugin registry." />
+          ) : plugins.length === 0 ? (
+            <EmptyState icon="Plug" title="No plugins registered" description="Backend plugin definitions will appear here after the plugin registry starts." />
+          ) : (
+            <div className="grid gap-4 xl:grid-cols-2">
+              {plugins.map((plugin) => (
+                <PluginCard key={plugin.key} plugin={plugin} busy={busyKey === plugin.key} onViewMore={() => setSelectedPlugin(plugin)} onInstall={() => void install(plugin.key)} />
+              ))}
+            </div>
+          )}
+        </SectionCard>
+      )}
+
+      {view === "installed" && (
+        <SectionCard title="Installed plugins" description="Platform-wide plugin installations. Tenant plugin installs can be added from school profiles later.">
+          {loading ? (
+            <EmptyState icon="LoaderCircle" title="Loading installed plugins" />
+          ) : installed.length === 0 ? (
+            <EmptyState icon="PlugZap" title="No installed plugins" description="Install Strapi CMS or ERPNext from Marketplace to activate platform sync." />
+          ) : (
+            <div className="space-y-3">
+              {installed.map((plugin) => {
+                const installation = platformInstallation(plugin);
+                return (
+                  <div key={plugin.key} className="flex flex-col gap-3 rounded-xl border border-border p-4 md:flex-row md:items-center md:justify-between">
+                    <div className="flex min-w-0 items-start gap-3">
+                      <PluginIcon pluginKey={plugin.key} />
+                      <div className="min-w-0">
+                        <p className="font-medium">{plugin.name}</p>
+                        <p className="text-[13px] text-muted-foreground">{plugin.key} · installed {installation ? formatDateTime(installation.installedAt) : "recently"}</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <StatusChip tone={statusTone(installation?.status)} label={installation?.status.toLowerCase() ?? "installed"} />
+                      <StatusChip tone="info" label={scopeLabel(plugin.scope)} icon="ShieldCheck" />
+                      <Button size="sm" variant="outline" onClick={() => void openSettings(plugin)}><Icon name="Settings" className="size-4" /> Settings</Button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </SectionCard>
+      )}
+
+      {view === "actions" && (
+        <SectionCard
+          title="Plugin actions"
+          description="Run queued Strapi and ERPNext sync jobs created by platform actions such as plan creation."
+          action={<div className="flex flex-wrap gap-2"><Button variant="outline" onClick={() => void runSync(true)} disabled={syncRunning}><Icon name="RotateCcw" className="size-4" /> Retry failed</Button><Button onClick={() => void runSync()} disabled={syncRunning}><Icon name="Play" className="size-4" /> Run pending sync</Button></div>}
+        >
+          {plugins.length === 0 && !loading ? (
+            <EmptyState icon="Wrench" title="No plugin actions available" description="Install or register plugins first." />
+          ) : (
+            <div className="grid gap-4 xl:grid-cols-[1fr_1.3fr]">
+              <div className="space-y-3">
+                {plugins.map((plugin) => {
+                  const installation = platformInstallation(plugin);
+                  return (
+                    <div key={plugin.key} className="rounded-xl border border-border p-4">
+                      <div className="flex items-start gap-3">
+                        <PluginIcon pluginKey={plugin.key} />
+                        <div className="min-w-0">
+                          <p className="font-medium">{plugin.name}</p>
+                          <p className="text-[13px] text-muted-foreground">Version {pluginVersion(plugin.key)} · {installation ? "installed" : "not installed"}</p>
+                        </div>
+                      </div>
+                      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                        <PreviewRow label="Install status" value={installation?.status ?? "Not installed"} />
+                        <PreviewRow label="Settings" value={installation ? pluginConfigStatus(plugin, installation.config) : "Not installed"} />
+                        <PreviewRow label="Jobs queued" value={String(syncJobs.filter((job) => job.plugin.key === plugin.key && job.status === "PENDING").length)} />
+                      </div>
+                      {installation && <div className="mt-3"><Button size="sm" variant="outline" onClick={() => void openSettings(plugin)}><Icon name="Settings" className="size-4" /> Plugin settings</Button></div>}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="rounded-xl border border-border">
+                <div className="border-b border-border px-4 py-3">
+                  <h3 className="font-semibold">Recent sync jobs</h3>
+                  <p className="text-[13px] text-muted-foreground">Latest platform plugin jobs and results.</p>
+                </div>
+                <div className="divide-y divide-border">
+                  {syncJobs.length === 0 ? (
+                    <div className="p-4"><EmptyState icon="ListChecks" title="No sync jobs yet" description="Create or update a plan after installing plugins to queue sync work." /></div>
+                  ) : syncJobs.slice(0, 8).map((job) => (
+                    <div key={job.id} className="flex flex-col gap-3 p-4 md:flex-row md:items-start md:justify-between">
+                      <div className="min-w-0 flex-1">
+                        <p className="font-medium">{job.plugin.name}</p>
+                        <p className="text-[13px] text-muted-foreground">{job.capability} · {formatDateTime(job.createdAt)}</p>
+                        {pluginJobMessage(job.result) && <p className="mt-1 text-[13px] text-muted-foreground">{pluginJobMessage(job.result)}</p>}
+                      </div>
+                      <StatusChip tone={syncJobTone(job.status)} label={job.status.toLowerCase()} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </SectionCard>
+      )}
+
+      <Dialog open={Boolean(selectedPlugin)} onOpenChange={(open) => !open && setSelectedPlugin(null)}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{selectedPlugin?.name}</DialogTitle>
+            <DialogDescription>{selectedPlugin ? pluginDescription(selectedPlugin.key) : ""}</DialogDescription>
+          </DialogHeader>
+          {selectedPlugin && (
+            <div className="space-y-4">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <PreviewRow label="Version" value={pluginVersion(selectedPlugin.key)} />
+                <PreviewRow label="Developer" value="Official Skolaroid developer" />
+                <PreviewRow label="Scope" value={scopeLabel(selectedPlugin.scope)} />
+                <PreviewRow label="Status" value={platformInstallation(selectedPlugin) ? "Installed" : "Available"} />
+              </div>
+              <SectionCard title="Capabilities">
+                <div className="flex flex-wrap gap-2">
+                  {selectedPlugin.capabilities.map((capability) => <StatusChip key={capability} tone="muted" label={capability} />)}
+                </div>
+              </SectionCard>
+            </div>
+          )}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setSelectedPlugin(null)}>Close</Button>
+            {selectedPlugin && (
+              <Button onClick={() => void install(selectedPlugin.key)} disabled={Boolean(platformInstallation(selectedPlugin)) || selectedPlugin.scope === "TENANT" || busyKey === selectedPlugin.key}>
+                <Icon name={platformInstallation(selectedPlugin) ? "CheckCircle2" : "Plus"} className="size-4" />
+                {platformInstallation(selectedPlugin) ? "Installed" : "Install"}
+              </Button>
+            )}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={Boolean(settingsPlugin)} onOpenChange={(open) => !open && setSettingsPlugin(null)}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{settingsPlugin?.name} settings</DialogTitle>
+            <DialogDescription>Configure platform credentials used by this installed plugin. Secret fields stay unchanged when left blank.</DialogDescription>
+          </DialogHeader>
+          {settingsPlugin && (
+            <div className="grid gap-4">
+              {pluginSettingFields(settingsPlugin.key).map((field) => (
+                <Field key={field.key} label={field.label}>
+                  <Input
+                    type={field.secret ? "password" : "text"}
+                    value={settingsForm[field.key] ?? ""}
+                    placeholder={field.placeholder}
+                    onChange={(event) => setSettingsForm((current) => ({ ...current, [field.key]: event.target.value }))}
+                  />
+                </Field>
+              ))}
+            </div>
+          )}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setSettingsPlugin(null)}>Cancel</Button>
+            <Button onClick={() => void saveSettings()} disabled={settingsSaving}><Icon name="Save" className="size-4" /> Save settings</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}
+
 export function PlatformPlanCatalog() {
   const navigate = useNavigate();
   const [plans, setPlans] = useState<PlatformPlanRow[]>([]);
@@ -1109,6 +1378,140 @@ function PlatformAction({ active, icon, label, hint, tone = "primary", onClick }
       <Icon name="ChevronRight" className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
     </button>
   );
+}
+
+function PluginCard({ plugin, busy, onViewMore, onInstall }: { plugin: PluginDefinition; busy: boolean; onViewMore: () => void; onInstall: () => void }) {
+  const installation = platformInstallation(plugin);
+  const installed = Boolean(installation);
+  const tenantOnly = plugin.scope === "TENANT";
+
+  return (
+    <div className="flex h-full flex-col rounded-xl border border-border bg-card p-5">
+      <div className="flex items-start gap-4">
+        <PluginLogo pluginKey={plugin.key} />
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <h2 className="text-[18px] font-semibold leading-tight">{plugin.name}</h2>
+            <StatusChip tone="success" label="Verified" icon="BadgeCheck" />
+          </div>
+          <p className="mt-1 text-[13px] text-muted-foreground">Version {pluginVersion(plugin.key)}</p>
+          <p className="mt-2 line-clamp-2 text-[14px] text-muted-foreground">{pluginDescription(plugin.key)}</p>
+        </div>
+      </div>
+
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
+        <StatusChip tone={installed ? "success" : "info"} label={installed ? "Installed" : "Available"} />
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" onClick={onViewMore}>
+            <Icon name="Eye" className="size-4" />
+            View more
+          </Button>
+          <Button onClick={onInstall} disabled={busy || tenantOnly || installed} variant={installed ? "outline" : "default"}>
+            <Icon name={installed ? "CheckCircle2" : "Plus"} className="size-4" />
+            {tenantOnly ? "Tenant only" : installed ? "Installed" : "Install"}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PluginLogo({ pluginKey }: { pluginKey: string }) {
+  const initials = pluginKey.includes("erpnext") ? "EN" : pluginKey.includes("strapi") ? "ST" : "PL";
+  const icon = pluginKey.includes("strapi") ? "PanelsTopLeft" : pluginKey.includes("erpnext") ? "ReceiptText" : "Plug";
+  const tone = pluginKey.includes("strapi") ? "bg-primary-subtle text-primary-subtle-foreground" : pluginKey.includes("erpnext") ? "bg-success-subtle text-success-subtle-foreground" : "bg-muted text-muted-foreground";
+  return (
+    <span className={`relative flex size-16 shrink-0 items-center justify-center rounded-2xl ${tone}`}>
+      <Icon name={icon} className="size-7" />
+      <span className="absolute -bottom-1 -right-1 rounded-md border border-border bg-background px-1.5 py-0.5 text-[10px] font-semibold text-foreground shadow-sm">{initials}</span>
+    </span>
+  );
+}
+
+function PluginIcon({ pluginKey }: { pluginKey: string }) {
+  const icon = pluginKey.includes("strapi") ? "PanelsTopLeft" : pluginKey.includes("erpnext") ? "ReceiptText" : "Plug";
+  const tone = pluginKey.includes("strapi") ? "bg-primary-subtle text-primary-subtle-foreground" : pluginKey.includes("erpnext") ? "bg-success-subtle text-success-subtle-foreground" : "bg-muted text-muted-foreground";
+  return (
+    <span className={`flex size-12 shrink-0 items-center justify-center rounded-xl ${tone}`}>
+      <Icon name={icon} className="size-6" />
+    </span>
+  );
+}
+
+function pluginVersion(key: string) {
+  if (key === "strapi-website-cms") return "1.0.0";
+  if (key === "erpnext-business-ops") return "1.0.0";
+  return "0.1.0";
+}
+
+function pluginSettingFields(key: string) {
+  if (key === "strapi-website-cms") {
+    return [
+      { key: "baseUrl", label: "Strapi URL", placeholder: "http://localhost:1337" },
+      { key: "apiToken", label: "Strapi API token", placeholder: "Paste read/write API token", secret: true },
+    ];
+  }
+  if (key === "erpnext-business-ops") {
+    return [
+      { key: "baseUrl", label: "ERPNext URL", placeholder: "https://erp.example.com" },
+      { key: "apiKey", label: "ERPNext API key", placeholder: "API key" },
+      { key: "apiSecret", label: "ERPNext API secret", placeholder: "API secret", secret: true },
+    ];
+  }
+  return [{ key: "baseUrl", label: "Base URL", placeholder: "https://service.example.com" }];
+}
+
+function defaultPluginSettings(key: string, config: Record<string, unknown>) {
+  return Object.fromEntries(pluginSettingFields(key).map((field) => {
+    const value = config[field.key];
+    return [field.key, typeof value === "string" && value !== "********" ? value : ""];
+  }));
+}
+
+function pluginDescription(key: string) {
+  if (key === "strapi-website-cms") return "Publishes website plans, modules, SEO and CMS-controlled content to Strapi.";
+  if (key === "erpnext-business-ops") return "Syncs leads, customers, pricing plans, quotations, invoices and payments with ERPNext.";
+  return "Extends Skolaroid through the plugin runtime.";
+}
+
+function platformInstallation(plugin: PluginDefinition) {
+  return plugin.installations.find((installation) => installation.platformWide && !installation.tenantId);
+}
+
+function pluginConfigStatus(plugin: PluginDefinition, config: Record<string, unknown> | null | undefined) {
+  const keys = pluginSettingFields(plugin.key).map((field) => field.key);
+  if (keys.length === 0) return "No settings required";
+  const configured = keys.filter((key) => {
+    const value = config?.[key];
+    return typeof value === "string" && value.trim().length > 0;
+  });
+  return configured.length === keys.length ? "Configured" : `Missing ${keys.length - configured.length}`;
+}
+
+function scopeLabel(scope: PluginDefinition["scope"]) {
+  if (scope === "PLATFORM") return "Platform";
+  if (scope === "TENANT") return "Tenant";
+  return "Platform + tenant";
+}
+
+function statusTone(status?: string): "success" | "danger" | "warning" | "muted" {
+  if (status === "INSTALLED") return "success";
+  if (status === "ERROR") return "danger";
+  if (status === "DISABLED") return "warning";
+  return "muted";
+}
+
+function syncJobTone(status: PluginSyncJob["status"]): "success" | "danger" | "warning" | "info" {
+  if (status === "SUCCEEDED") return "success";
+  if (status === "FAILED") return "danger";
+  if (status === "RUNNING") return "info";
+  return "warning";
+}
+
+function pluginJobMessage(result: unknown): string | null {
+  if (!result || typeof result !== "object") return null;
+  const message = (result as { message?: unknown }).message;
+  return typeof message === "string" ? message : null;
 }
 
 function ProfileModeButton({ active, icon, label, hint, onClick }: { active: boolean; icon: string; label: string; hint: string; onClick: () => void }) {

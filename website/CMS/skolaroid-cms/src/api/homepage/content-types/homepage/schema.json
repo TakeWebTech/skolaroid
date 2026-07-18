@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepage",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "hero": {
+      "type": "component",
+      "component": "sections.hero",
+      "repeatable": false
+    },
+    "sections": {
+      "type": "json"
+    }
+  }
+}

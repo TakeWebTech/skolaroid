@@ -107,6 +107,25 @@ enum BillingCycle {
   CONTRACT
 }
 
+enum PluginScope {
+  PLATFORM
+  TENANT
+  BOTH
+}
+
+enum PluginInstallationStatus {
+  INSTALLED
+  DISABLED
+  ERROR
+}
+
+enum PluginSyncJobStatus {
+  PENDING
+  RUNNING
+  SUCCEEDED
+  FAILED
+}
+
 model Tenant {
   id        String       @id @default(uuid()) @db.Uuid
   code      String       @unique
@@ -136,6 +155,9 @@ model Tenant {
   announcements         Announcement[]
   platformProfile       PlatformTenantProfile?
   subscriptions         PlatformSubscription[]
+  pluginInstallations   PluginInstallation[]
+  pluginSyncJobs        PluginSyncJob[]
+  pluginAuditLogs       PluginAuditLog[]
 
   @@map("tenants")
 }
@@ -196,8 +218,118 @@ model PlatformPlan {
   updatedAt    DateTime     @updatedAt @map("updated_at") @db.Timestamptz(6)
 
   subscriptions PlatformSubscription[]
+  syncJobs      PluginSyncJob[]
 
   @@map("platform_plans")
+}
+
+model PluginDefinition {
+  id           String      @id @default(uuid()) @db.Uuid
+  key          String      @unique
+  name         String
+  description  String?
+  scope        PluginScope
+  capabilities String[]
+  system       Boolean     @default(true)
+  createdAt    DateTime    @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime    @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  installations PluginInstallation[]
+  syncJobs      PluginSyncJob[]
+  auditLogs     PluginAuditLog[]
+
+  @@index([scope])
+  @@map("plugin_definitions")
+}
+
+model PluginInstallation {
+  id           String                   @id @default(uuid()) @db.Uuid
+  pluginId     String                   @map("plugin_id") @db.Uuid
+  tenantId     String?                  @map("tenant_id") @db.Uuid
+  platformWide Boolean                  @default(false) @map("platform_wide")
+  status       PluginInstallationStatus @default(INSTALLED)
+  config       Json?
+  installedById String?                 @map("installed_by_id") @db.Uuid
+  installedAt  DateTime                 @default(now()) @map("installed_at") @db.Timestamptz(6)
+  updatedAt    DateTime                 @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  plugin      PluginDefinition @relation(fields: [pluginId], references: [id], onDelete: Cascade)
+  tenant      Tenant?          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  installedBy User?            @relation("PluginInstalledBy", fields: [installedById], references: [id], onDelete: SetNull)
+  settings    PluginSetting[]
+  syncJobs    PluginSyncJob[]
+  auditLogs   PluginAuditLog[]
+
+  @@unique([pluginId, tenantId])
+  @@index([tenantId, status])
+  @@index([platformWide, status])
+  @@map("plugin_installations")
+}
+
+model PluginSetting {
+  id             String   @id @default(uuid()) @db.Uuid
+  installationId String   @map("installation_id") @db.Uuid
+  key            String
+  value          Json?
+  encrypted      Boolean  @default(false)
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  installation PluginInstallation @relation(fields: [installationId], references: [id], onDelete: Cascade)
+
+  @@unique([installationId, key])
+  @@map("plugin_settings")
+}
+
+model PluginSyncJob {
+  id             String              @id @default(uuid()) @db.Uuid
+  pluginId       String              @map("plugin_id") @db.Uuid
+  installationId String?             @map("installation_id") @db.Uuid
+  tenantId       String?             @map("tenant_id") @db.Uuid
+  planId         String?             @map("plan_id") @db.Uuid
+  capability     String
+  status         PluginSyncJobStatus @default(PENDING)
+  payload        Json
+  result         Json?
+  attempts       Int                 @default(0)
+  runAfter       DateTime            @default(now()) @map("run_after") @db.Timestamptz(6)
+  startedAt      DateTime?           @map("started_at") @db.Timestamptz(6)
+  completedAt    DateTime?           @map("completed_at") @db.Timestamptz(6)
+  createdAt      DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime            @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  plugin       PluginDefinition    @relation(fields: [pluginId], references: [id], onDelete: Cascade)
+  installation PluginInstallation? @relation(fields: [installationId], references: [id], onDelete: SetNull)
+  tenant       Tenant?             @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  plan         PlatformPlan?       @relation(fields: [planId], references: [id], onDelete: SetNull)
+
+  @@index([status, runAfter])
+  @@index([tenantId, createdAt])
+  @@index([pluginId, capability])
+  @@map("plugin_sync_jobs")
+}
+
+model PluginAuditLog {
+  id             String   @id @default(uuid()) @db.Uuid
+  pluginId       String   @map("plugin_id") @db.Uuid
+  installationId String?  @map("installation_id") @db.Uuid
+  tenantId       String?  @map("tenant_id") @db.Uuid
+  actorId        String?  @map("actor_id") @db.Uuid
+  action         String
+  resource       String
+  resourceId     String?  @map("resource_id")
+  metadata       Json?
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  plugin       PluginDefinition    @relation(fields: [pluginId], references: [id], onDelete: Cascade)
+  installation PluginInstallation? @relation(fields: [installationId], references: [id], onDelete: SetNull)
+  tenant       Tenant?             @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  actor        User?               @relation("PluginAuditActor", fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId, createdAt])
+  @@index([actorId, createdAt])
+  @@index([pluginId, action])
+  @@map("plugin_audit_logs")
 }
 
 model PlatformRole {
@@ -584,6 +716,8 @@ model User {
   reviewedApplications AdmissionApplication[] @relation("AdmissionReviewer")
   messages Message[] @relation("MessageSender")
   announcements Announcement[] @relation("AnnouncementCreator")
+  installedPlugins PluginInstallation[] @relation("PluginInstalledBy")
+  pluginAuditLogs PluginAuditLog[] @relation("PluginAuditActor")
 
   @@index([status])
   @@map("users")

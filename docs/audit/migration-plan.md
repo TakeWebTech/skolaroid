@@ -6,7 +6,7 @@ Stop here until audit is reviewed and approved.
 
 ## Phase 1: Production Foundation
 
-- Create root workspace structure without moving `frontend/`.
+- Create root workspace structure without moving `Frontend/`.
 - Add strict TypeScript, lint, typecheck, unit/component/E2E/a11y test scripts.
 - Add CI and environment schema.
 - Add root docs registries after approval.
@@ -46,4 +46,3 @@ Priority:
 - Backup/restore runbooks.
 - Accessibility and responsive verification.
 - Load tests for attendance, marks, payment, and reports.
-

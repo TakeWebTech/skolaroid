@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "seo_default",
+  "info": {
+    "singularName": "seo-default",
+    "pluralName": "seo-defaults",
+    "displayName": "seo default"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

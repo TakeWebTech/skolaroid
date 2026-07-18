@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "pricing_setting",
+  "info": {
+    "singularName": "pricing-setting",
+    "pluralName": "pricing-settings",
+    "displayName": "pricing setting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "currency": {
+      "type": "string",
+      "required": false
+    },
+    "billingNote": {
+      "type": "text"
+    },
+    "quoteDisclaimer": {
+      "type": "text"
+    }
+  }
+}

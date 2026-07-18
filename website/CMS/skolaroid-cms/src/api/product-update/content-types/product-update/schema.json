@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_update",
+  "info": {
+    "singularName": "product-update",
+    "pluralName": "product-updates",
+    "displayName": "product update"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "updateType": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "improvement",
+        "fix",
+        "security"
+      ],
+      "default": "improvement"
+    }
+  }
+}

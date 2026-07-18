@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sections_screenshot",
+  "info": {
+    "displayName": "screenshot",
+    "icon": "layer"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "caption": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

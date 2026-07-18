@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_statistic",
+  "info": {
+    "displayName": "statistic",
+    "icon": "layer"
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "helperText": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

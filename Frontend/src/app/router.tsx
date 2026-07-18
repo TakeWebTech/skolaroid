@@ -47,6 +47,7 @@ import {
   PlatformOperations,
   PlatformPlanCatalog,
   PlatformPlans,
+  PlatformPlugins,
   PlatformReports,
   PlatformSchoolProfile,
   PlatformSchools,
@@ -184,6 +185,7 @@ export function AppRouter() {
         <Route path="/platform/plans/new" element={<PlatformCreatePlan />} />
         <Route path="/platform/plans/entitlements" element={<PlatformEntitlements />} />
         <Route path="/platform/plans/subscriptions" element={<PlatformSubscriptions />} />
+        <Route path="/platform/plugins" element={<PlatformPlugins />} />
         <Route path="/platform/operations" element={<PlatformOperations />} />
         <Route path="/platform/support" element={<PlatformSupport />} />
         <Route path="/platform/reports" element={<PlatformReports />} />

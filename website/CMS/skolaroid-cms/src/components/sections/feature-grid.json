@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_feature_grid",
+  "info": {
+    "displayName": "feature grid",
+    "icon": "layer"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "features": {
+      "type": "json"
+    }
+  }
+}

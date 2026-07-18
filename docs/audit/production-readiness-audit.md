@@ -21,7 +21,7 @@ Not production-ready.
 
 ## Command Results
 
-Commands were run from `frontend/` on 2026-07-15.
+Commands were run from `Frontend/` on 2026-07-15.
 
 | Command | Result | Evidence |
 | --- | --- | --- |

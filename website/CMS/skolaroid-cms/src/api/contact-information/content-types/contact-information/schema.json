@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_information",
+  "info": {
+    "singularName": "contact-information",
+    "pluralName": "contact-informations",
+    "displayName": "contact information"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string",
+      "required": false
+    },
+    "address": {
+      "type": "text"
+    },
+    "businessHours": {
+      "type": "string",
+      "required": false
+    },
+    "socialLinks": {
+      "type": "json"
+    }
+  }
+}

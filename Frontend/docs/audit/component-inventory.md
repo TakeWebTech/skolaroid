@@ -15,7 +15,7 @@ Source: `src/app/components`, `src/app/pages`, `src/app/lib`.
 | Component | Classification | Notes |
 | --- | --- | --- |
 | `AppShell` | Reusable for production | Responsive chrome; remove demo role switcher for production. |
-| `Brand` | Reusable for production | Static SMLS brand. |
+| `Brand` | Reusable for production | Static Skolaroid brand. |
 | `SidebarLink`, `BottomLink`, `MoreSheet`, `MobileMenu` | Reusable for production | Navigation wrappers. |
 | `ProfileMenu` | Partially implemented | Static Ravi Sharma identity and sign-out link only. |
 | `ContextSwitcher` | Prototype interaction | Displays context; dropdown choices mostly static/toast-only. |
@@ -25,7 +25,7 @@ Source: `src/app/components`, `src/app/pages`, `src/app/lib`.
 | `NotificationsButton` | Prototype interaction | Mock notifications and toast actions. |
 | `HelpButton` | Prototype interaction | Static FAQ and support toast. |
 
-## Shared SMLS Components
+## Shared Skolaroid Components
 
 | Component | Classification | Notes |
 | --- | --- | --- |

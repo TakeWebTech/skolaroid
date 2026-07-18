@@ -68,10 +68,10 @@ const demoRoles = [
   {
     key: "platform",
     name: "Platform Admin",
-    email: "platform@smls.com",
-    displayName: "SMLS Platform Admin",
+    email: "platform@skolaroid.com",
+    displayName: "Skolaroid Platform Admin",
     platform: true,
-    permissions: ["platform.tenants.view", "platform.tenants.create", "platform.tenants.manage", "platform.plans.view", "platform.plans.manage", "platform.operations.view", "platform.settings.view"]
+    permissions: ["platform.tenants.view", "platform.tenants.create", "platform.tenants.manage", "platform.plans.view", "platform.plans.manage", "platform.operations.view", "platform.settings.view", "platform.settings.manage"]
   }
 ];
 
@@ -110,7 +110,7 @@ async function main() {
       adminName: "Meera Iyer",
       adminEmail: "admin@demoschool.edu",
       studentCapacity: 1200,
-      implementationOwner: "SMLS Demo Onboarding",
+      implementationOwner: "Skolaroid Demo Onboarding",
       onboardingNotes: "Development demo school for local testing.",
       supportKeyHash: hashSecret(DEVELOPMENT_SUPPORT_KEY),
       supportKeyRotatedAt: new Date()
@@ -126,7 +126,7 @@ async function main() {
       adminName: "Meera Iyer",
       adminEmail: "admin@demoschool.edu",
       studentCapacity: 1200,
-      implementationOwner: "SMLS Demo Onboarding",
+      implementationOwner: "Skolaroid Demo Onboarding",
       onboardingNotes: "Development demo school for local testing.",
       supportKeyHash: hashSecret(DEVELOPMENT_SUPPORT_KEY)
     }
@@ -266,6 +266,11 @@ function hashSecret(value: string) {
 }
 
 async function resetDevelopmentDatabase() {
+  await prisma.pluginAuditLog.deleteMany();
+  await prisma.pluginSyncJob.deleteMany();
+  await prisma.pluginSetting.deleteMany();
+  await prisma.pluginInstallation.deleteMany();
+  await prisma.pluginDefinition.deleteMany();
   await prisma.auditEvent.deleteMany();
   await prisma.message.deleteMany();
   await prisma.conversation.deleteMany();

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_seo",
+  "info": {
+    "displayName": "seo",
+    "icon": "layer"
+  },
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "required": false
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "required": false
+    },
+    "noIndex": {
+      "type": "boolean",
+      "default": false
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

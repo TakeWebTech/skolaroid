@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_sections_hero",
+  "info": {
+    "displayName": "hero",
+    "icon": "layer"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "primaryButton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "secondaryButton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  }
+}

@@ -71,8 +71,8 @@ export class JwtAuthGuard implements CanActivate {
   private async verifyToken(token: string): Promise<AccessTokenPayload> {
     try {
       return await this.jwt.verifyAsync<AccessTokenPayload>(token, {
-        issuer: "smls",
-        audience: "smls-web"
+        issuer: "skolaroid",
+        audience: "skolaroid-web"
       });
     } catch {
       throw new UnauthorizedException("Invalid access token");

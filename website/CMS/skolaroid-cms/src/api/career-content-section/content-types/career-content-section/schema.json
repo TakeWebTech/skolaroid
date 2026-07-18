@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "career_content_section",
+  "info": {
+    "singularName": "career-content-section",
+    "pluralName": "career-content-sections",
+    "displayName": "career content section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "team": {
+      "type": "string",
+      "required": false
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

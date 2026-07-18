@@ -68,17 +68,17 @@ const DICT: Record<string, Entry> = {
   },
 
   /* ----------------------------- Sign-in ------------------------------ */
-  "Sign in to SMLS": { hi: "SMLS में साइन इन करें", ta: "SMLS இல் உள்நுழையவும்", te: "SMLS లో సైన్ ఇన్ చేయండి" },
+  "Sign in to Skolaroid": { hi: "Skolaroid में साइन इन करें", ta: "Skolaroid இல் உள்நுழையவும்", te: "Skolaroid లో సైన్ ఇన్ చేయండి" },
   "Email or phone": { hi: "ईमेल या फ़ोन", ta: "மின்னஞ்சல் அல்லது தொலைபேசி", te: "ఇమెయిల్ లేదా ఫోన్" },
   Password: { hi: "पासवर्ड", ta: "கடவுச்சொல்", te: "పాస్‌వర్డ్" },
   "Forgot?": { hi: "भूल गए?", ta: "மறந்துவிட்டதா?", te: "మర్చిపోయారా?" },
   "Sign In": { hi: "साइन इन", ta: "உள்நுழை", te: "సైన్ ఇన్" },
   or: { hi: "या", ta: "அல்லது", te: "లేదా" },
   "Continue with SSO": { hi: "SSO से जारी रखें", ta: "SSO உடன் தொடரவும்", te: "SSO తో కొనసాగించండి" },
-  "A teacher who can use WhatsApp can use SMLS. Need help?": {
-    hi: "जो शिक्षक WhatsApp चला सकता है, वह SMLS चला सकता है। मदद चाहिए?",
-    ta: "WhatsApp பயன்படுத்தத் தெரிந்த ஆசிரியர் SMLS ஐப் பயன்படுத்தலாம். உதவி வேண்டுமா?",
-    te: "WhatsApp వాడగలిగే ఉపాధ్యాయుడు SMLS వాడగలరు. సహాయం కావాలా?",
+  "A teacher who can use WhatsApp can use Skolaroid. Need help?": {
+    hi: "जो शिक्षक WhatsApp चला सकता है, वह Skolaroid चला सकता है। मदद चाहिए?",
+    ta: "WhatsApp பயன்படுத்தத் தெரிந்த ஆசிரியர் Skolaroid ஐப் பயன்படுத்தலாம். உதவி வேண்டுமா?",
+    te: "WhatsApp వాడగలిగే ఉపాధ్యాయుడు Skolaroid వాడగలరు. సహాయం కావాలా?",
   },
   "Contact your school": { hi: "अपने स्कूल से संपर्क करें", ta: "உங்கள் பள்ளியைத் தொடர்பு கொள்ளவும்", te: "మీ పాఠశాలను సంప్రదించండి" },
 

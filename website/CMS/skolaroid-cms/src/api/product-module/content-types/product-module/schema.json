@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_module",
+  "info": {
+    "singularName": "product-module",
+    "pluralName": "product-modules",
+    "displayName": "product module"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortName": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "tagline": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "availabilityStatus": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "beta",
+        "planned"
+      ],
+      "default": "available"
+    },
+    "iconName": {
+      "type": "string",
+      "required": false
+    },
+    "accentColor": {
+      "type": "string",
+      "required": false
+    },
+    "features": {
+      "type": "json"
+    },
+    "problems": {
+      "type": "json"
+    },
+    "benefits": {
+      "type": "json"
+    },
+    "roles": {
+      "type": "json"
+    },
+    "integrations": {
+      "type": "json"
+    },
+    "faqs": {
+      "type": "json"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

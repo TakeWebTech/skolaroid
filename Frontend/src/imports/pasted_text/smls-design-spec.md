@@ -1,4 +1,4 @@
-SMLS
+Skolaroid
 
 School Management and Learning System
 
@@ -9,7 +9,7 @@ Version 1.0 | Beginner-friendly, role-based and scalable
 Simple on day one. Powerful when needed.
 
 
-SMLS UI/UX Design System and Complete Screen Specification v1.0
+Skolaroid UI/UX Design System and Complete Screen Specification v1.0
 
 Document Control
 
@@ -19,7 +19,7 @@ Value
 
 Document
 
-SMLS UI/UX Design System and Complete Screen Specification
+Skolaroid UI/UX Design System and Complete Screen Specification
 
 Version
 
@@ -43,7 +43,7 @@ Product Master, PRD, System Architecture and Database Design
 
 Purpose
 
-This document defines navigation, dashboards, screen behaviour, responsive design and complete role-based application flows. It ensures that schools with low technology expertise can operate SMLS confidently while regular and advanced users retain efficient and powerful controls.
+This document defines navigation, dashboards, screen behaviour, responsive design and complete role-based application flows. It ensures that schools with low technology expertise can operate Skolaroid confidently while regular and advanced users retain efficient and powerful controls.
 
 A teacher who can use WhatsApp and a basic smartphone should be able to take attendance, assign homework, enter marks and communicate without technical training.
 
@@ -801,7 +801,7 @@ Specification
 
 Users
 
-SMLS staff
+Skolaroid staff
 
 Goal
 
@@ -2707,10 +2707,10 @@ Success metric defined
 
 25. Final UX Position
 
-SMLS must feel easy to a first-time teacher without feeling limited to an expert administrator.
+Skolaroid must feel easy to a first-time teacher without feeling limited to an expert administrator.
 
 The interface will achieve this through progressive disclosure, role-specific navigation, safe defaults and guided workflows. Beginners see only the decisions required to finish their work. Standard users gain shortcuts and flexibility. Advanced users gain bulk tools, automation, analytics and configuration without making the everyday interface difficult for everyone else.
 
 Success will be measured by whether schools complete real work accurately, quickly and confidently with less training, fewer mistakes and fewer support requests—not by visual decoration alone.
 
-SMLS UI/UX Design System and Complete Screen Specification v1.0
+Skolaroid UI/UX Design System and Complete Screen Specification v1.0

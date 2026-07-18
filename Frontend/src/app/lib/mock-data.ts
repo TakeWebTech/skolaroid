@@ -1,7 +1,7 @@
 import type { StudentRow } from "./types";
 
 export const SCHOOL = {
-  name: "SMLS",
+  name: "Skolaroid",
   branch: "No active branch data",
   year: "2026-27",
   currency: "₹",

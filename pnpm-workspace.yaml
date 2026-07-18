@@ -1,6 +1,5 @@
 packages:
-  - "frontend"
+  - "Frontend"
   - "backend"
   - "worker"
   - "packages/*"
-

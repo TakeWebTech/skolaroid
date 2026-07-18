@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "columns": {
+      "type": "json"
+    },
+    "copyrightText": {
+      "type": "string",
+      "required": false
+    },
+    "logos": {
+      "type": "component",
+      "component": "shared.logo",
+      "repeatable": true
+    }
+  }
+}

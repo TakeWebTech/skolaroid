@@ -1,4 +1,4 @@
-# SMLS Agent Instructions
+# Skolaroid Agent Instructions
 
 ## Source Of Truth
 
@@ -17,10 +17,11 @@ The audit phase is complete. Product registries have been started at `docs/produ
 
 ## Non-Negotiables
 
-- Do not move or rename `frontend/`.
+- `Frontend/` is the core Skolaroid engine UI.
+- `website/web_frontend/` is the public marketing website UI.
+- Do not rename `Frontend/` or `website/web_frontend/` without an explicit migration task.
 - Do not create fake production functionality.
 - Do not rely on frontend-only permissions.
 - Do not introduce TODO/FIXME placeholders in completed features.
 - Keep development seed data separate from production logic.
 - Record conflicts in `docs/decisions/open-conflicts.md`.
-

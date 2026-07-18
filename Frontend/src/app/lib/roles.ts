@@ -101,6 +101,7 @@ export const ROLES: Record<RoleId, RoleDefinition> = {
       { key: "home", label: "Home", icon: "Home", to: "/platform" },
       { key: "schools", label: "Schools", icon: "Building2", to: "/platform/schools" },
       { key: "plans", label: "Plans", icon: "Package", to: "/platform/plans" },
+      { key: "plugins", label: "Plugins", icon: "Plug", to: "/platform/plugins" },
       { key: "operations", label: "Operations", icon: "Activity", to: "/platform/operations" },
       { key: "support", label: "Support", icon: "LifeBuoy", to: "/platform/support" },
       { key: "reports", label: "Reports", icon: "BarChart3", to: "/platform/reports" },

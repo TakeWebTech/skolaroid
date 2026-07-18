@@ -1,11 +1,11 @@
 {
-  "name": "smls",
+  "name": "skolaroid",
   "private": true,
   "version": "0.0.0",
-  "description": "SMLS production monorepo",
+  "description": "Skolaroid production monorepo",
   "scripts": {
-    "frontend:dev": "pnpm --dir frontend dev",
-    "frontend:build": "pnpm --dir frontend build",
+    "frontend:dev": "pnpm --dir Frontend dev",
+    "frontend:build": "pnpm --dir Frontend build",
     "backend:dev": "pnpm --dir backend dev",
     "backend:build": "pnpm --dir backend build",
     "backend:test": "pnpm --dir backend test",

@@ -1,6 +1,6 @@
 # Migration Plan
 
-Goal: Convert the Figma Make SMLS prototype into a production application without losing useful UI work.
+Goal: Convert the Figma Make Skolaroid prototype into a production application without losing useful UI work.
 
 ## Phase 0: Freeze Prototype Boundaries
 

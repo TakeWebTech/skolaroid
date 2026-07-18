@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statistic",
+  "info": {
+    "singularName": "statistic",
+    "pluralName": "statistics",
+    "displayName": "statistic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "context": {
+      "type": "string",
+      "required": false
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "sourceNote": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

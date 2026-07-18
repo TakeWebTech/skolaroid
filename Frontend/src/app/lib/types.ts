@@ -1,4 +1,4 @@
-// SMLS core domain & app types
+// Skolaroid core domain & app types
 
 export type RoleId =
   | "teacher"

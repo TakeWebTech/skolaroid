@@ -2,7 +2,7 @@
 
 Audit date: 2026-07-15
 
-Scope: `frontend/` Figma Make React application. No implementation files were changed during this audit.
+Scope: `Frontend/` Figma Make React application. No implementation files were changed during this audit.
 
 ## Summary
 
@@ -65,4 +65,3 @@ Missing required production scripts:
 - test:a11y
 - preview
 - CI workflow
-

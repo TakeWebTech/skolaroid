@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_setting",
+  "info": {
+    "singularName": "global-setting",
+    "pluralName": "global-settings",
+    "displayName": "global setting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "required": true
+    },
+    "siteUrl": {
+      "type": "string",
+      "required": true
+    },
+    "supportEmail": {
+      "type": "email"
+    },
+    "salesEmail": {
+      "type": "email"
+    },
+    "defaultLocale": {
+      "type": "string",
+      "required": false
+    },
+    "defaultCurrency": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

@@ -64,7 +64,7 @@ export function PermissionDenied({ resource = "this" }: { resource?: string }) {
 }
 
 // System error with retry + reference code (spec §17 System error).
-export function SystemError({ code = "SMLS-500", onRetry }: { code?: string; onRetry?: () => void }) {
+export function SystemError({ code = "Skolaroid-500", onRetry }: { code?: string; onRetry?: () => void }) {
   return (
     <CenteredState
       icon="TriangleAlert"

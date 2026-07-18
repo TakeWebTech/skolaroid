@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_announcement",
+  "info": {
+    "singularName": "website-announcement",
+    "pluralName": "website-announcements",
+    "displayName": "website announcement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "type": "string",
+      "required": false
+    },
+    "href": {
+      "type": "string",
+      "required": false
+    },
+    "startsAt": {
+      "type": "datetime"
+    },
+    "endsAt": {
+      "type": "datetime"
+    }
+  }
+}

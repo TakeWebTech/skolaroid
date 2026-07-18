@@ -4,7 +4,7 @@ Date: 2026-07-15
 
 ## Decision
 
-Use Prisma with PostgreSQL for the initial SMLS identity foundation:
+Use Prisma with PostgreSQL for the initial Skolaroid identity foundation:
 
 - tenants
 - branches

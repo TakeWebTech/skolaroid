@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonial",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "testimonial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "personName": {
+      "type": "string",
+      "required": true
+    },
+    "personRole": {
+      "type": "string",
+      "required": false
+    },
+    "organisation": {
+      "type": "string",
+      "required": false
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
