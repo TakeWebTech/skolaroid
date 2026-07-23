@@ -3,8 +3,9 @@
 import { SectionHeading } from '@/components/site/section-heading';
 import { Reveal } from '@/components/site/reveal';
 import { type IntegrationDef } from '@/lib/site-data';
-import { GraduationCap, Plug } from 'lucide-react';
+import { Plug } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { BrandLogo } from '@/components/site/brand-logo';
 
 const statusStyles: Record<IntegrationDef['status'], string> = {
   available: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-600',
@@ -33,8 +34,8 @@ export function IntegrationsSection({ integrations }: { integrations: Integratio
             <div className="absolute h-72 w-72 rounded-full border border-dashed border-border" />
             <div className="absolute h-52 w-52 rounded-full border border-dashed border-border" />
             <div className="absolute h-32 w-32 rounded-full border border-dashed border-border" />
-            <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-glow">
-              <GraduationCap className="h-8 w-8" />
+            <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-glow">
+              <BrandLogo showText={false} markClassName="h-14 w-14 rounded-2xl bg-white/95" />
             </div>
             {/* Orbiting icons */}
             {['P', 'S', 'B', 'G', 'C', 'A'].map((label, i) => {

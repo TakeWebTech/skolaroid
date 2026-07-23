@@ -7,6 +7,7 @@ import {
 import { SectionHeading } from '@/components/site/section-heading';
 import { Reveal } from '@/components/site/reveal';
 import { cn } from '@/lib/utils';
+import { BrandLogo } from '@/components/site/brand-logo';
 
 const stakeholders = [
   { icon: Building2, label: 'Management', features: ['Strategic dashboards', 'Branch comparison', 'Revenue insights'] },
@@ -60,10 +61,11 @@ export function EcosystemSection() {
             <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
               <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white shadow-glow">
                 <div className="absolute inset-0 animate-pulse-ring rounded-full bg-primary/30" />
-                <div className="text-center">
-                  <Building2 className="mx-auto h-7 w-7" />
-                  <p className="mt-1 text-xs font-bold font-display">Skolaroid</p>
-                </div>
+                <BrandLogo
+                  className="relative z-10 flex-col gap-1"
+                  markClassName="h-12 w-12 rounded-2xl bg-white/95"
+                  textClassName="text-xs text-white"
+                />
               </div>
             </div>
 

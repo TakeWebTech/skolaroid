@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { GraduationCap, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { footerNav } from '@/lib/site-data';
+import { BrandLogo } from './brand-logo';
 
 export function SiteFooter() {
   return (
@@ -8,11 +9,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
           <div className="col-span-2 lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white">
-                <GraduationCap className="h-5 w-5" />
-              </span>
-              <span className="text-lg font-bold text-white font-display">Skolaroid</span>
+            <Link
+              href="/"
+              className="inline-flex rounded-md border border-white/10 bg-[#edf5ff] px-3.5 py-2.5 shadow-sm shadow-black/20 transition-colors hover:bg-white"
+              aria-label="Skolaroid home"
+            >
+              <BrandLogo markClassName="h-14 w-14" textClassName="text-xl text-slate-950" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/60 max-w-xs">
               The intelligent operating system for modern schools. Built in India by TakeWeb India, designed for institutions everywhere.

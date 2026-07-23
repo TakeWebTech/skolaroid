@@ -6,9 +6,10 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from '@/components/ui/sheet';
-import { Menu, ChevronDown, GraduationCap, ArrowRight } from 'lucide-react';
+import { Menu, ChevronDown, ArrowRight } from 'lucide-react';
 import { navConfig } from '@/lib/site-data';
 import { AnnouncementBar } from './announcement-bar';
+import { BrandLogo } from './brand-logo';
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,12 +42,7 @@ export function SiteHeader() {
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2.5" aria-label="Skolaroid home">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white shadow-glow">
-              <GraduationCap className="h-5 w-5" />
-            </span>
-            <span className="text-lg font-bold tracking-tight font-display">
-              Skolaroid
-            </span>
+            <BrandLogo priority markClassName="h-12 w-12" textClassName="text-xl" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -124,10 +120,7 @@ export function SiteHeader() {
                 <SheetTitle className="sr-only">Navigation</SheetTitle>
                 <div className="flex items-center justify-between border-b px-5 py-4">
                   <Link href="/" className="flex items-center gap-2">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-white">
-                      <GraduationCap className="h-4 w-4" />
-                    </span>
-                    <span className="font-bold font-display">Skolaroid</span>
+                    <BrandLogo markClassName="h-11 w-11" textClassName="text-lg" />
                   </Link>
                   <SheetClose asChild />
                 </div>

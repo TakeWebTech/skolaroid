@@ -11,13 +11,13 @@ import {
   Megaphone,
   Bus,
   BarChart3,
-  GraduationCap,
   Bell,
   TrendingUp,
   TrendingDown,
   Search,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { BrandLogo } from './brand-logo';
 
 export type DashboardVariant =
   | 'overview'
@@ -117,10 +117,7 @@ export function DashboardMockup({ variant = 'overview' }: { variant?: DashboardV
         {/* Sidebar */}
         <aside className="hidden w-44 shrink-0 border-r border-border bg-muted/30 p-3 sm:block">
           <div className="mb-4 flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-white">
-              <GraduationCap className="h-4 w-4" />
-            </span>
-            <span className="text-sm font-bold font-display">Skolaroid</span>
+            <BrandLogo markClassName="h-7 w-7 rounded-lg" textClassName="text-sm" />
           </div>
           <nav className="space-y-1">
             {navItems.map((item) => (

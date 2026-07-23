@@ -1,6 +1,6 @@
 'use client';
 
-import { GraduationCap } from 'lucide-react';
+import { BrandLogo } from '@/components/site/brand-logo';
 
 const placeholders = [
   'School Partner',
@@ -16,9 +16,7 @@ const placeholders = [
 function LogoPlaceholder({ label }: { label: string }) {
   return (
     <div className="flex h-12 shrink-0 items-center gap-2 rounded-xl border border-border bg-card px-5 shadow-sm">
-      <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
-        <GraduationCap className="h-4 w-4" />
-      </span>
+      <BrandLogo showText={false} markClassName="h-7 w-7 rounded-md" />
       <span className="whitespace-nowrap text-sm font-semibold text-muted-foreground">{label}</span>
     </div>
   );
