@@ -20,7 +20,7 @@ export function BrandLogo({
     <span className={cn('inline-flex items-center gap-2.5', className)}>
       <span className={cn('relative block h-12 w-12 shrink-0', markClassName)}>
         <Image
-          src="/brand/skolaroid-mark.png"
+          src="/brand/skolaroid-logo.webp"
           alt=""
           fill
           sizes="56px"
