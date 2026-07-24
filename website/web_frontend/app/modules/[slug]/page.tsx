@@ -6,6 +6,7 @@ import { PageHero, CtaButtons } from '@/components/site/page-hero';
 import { FinalCtaSection } from '@/components/site/sections/final-cta';
 import { modules, moduleMap } from '@/lib/site-data';
 import { getProductModule } from '@/lib/cms-content';
+import { siteUrl } from '@/lib/seo';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
@@ -20,7 +21,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: m.name,
     description: m.tagline,
-    alternates: { canonical: `https://skolaroid.com/modules/${m.id}` },
+    alternates: { canonical: siteUrl(`/modules/${m.id}`) },
   };
 }
 

@@ -5,6 +5,10 @@ import { Button } from '@/components/ui/button';
 export const metadata = {
   title: 'Thank You',
   description: 'Your demo request has been received.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function ThankYouPage() {

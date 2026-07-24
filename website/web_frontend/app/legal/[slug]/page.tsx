@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { PageHero } from '@/components/site/page-hero';
 import { notFound } from 'next/navigation';
 import { getLegalPage, getLegalPages } from '@/lib/cms-content';
+import { siteUrl } from '@/lib/seo';
 
 const policies: Record<string, { title: string; updated: string; sections: { heading: string; body: string }[] }> = {
   privacy: {
@@ -71,7 +72,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const p = await getLegalPage(params.slug) ?? policies[params.slug];
   if (!p) return { title: 'Policy not found' };
-  return { title: p.title, description: `${p.title} for Skolaroid.` };
+  return {
+    title: p.title,
+    description: `${p.title} for Skolaroid.`,
+    alternates: { canonical: siteUrl(`/legal/${params.slug}`) },
+  };
 }
 
 export default async function LegalPage({ params }: { params: { slug: string } }) {

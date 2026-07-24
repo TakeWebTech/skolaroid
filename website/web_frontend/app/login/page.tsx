@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: 'Login & Portal Selection',
   description: 'Choose your Skolaroid portal — administrator, teacher, student, parent, employee or super admin.',
   alternates: { canonical: 'https://skolaroid.com/login' },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const portals = [

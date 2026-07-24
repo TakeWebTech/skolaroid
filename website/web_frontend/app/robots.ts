@@ -1,8 +1,15 @@
 import type { MetadataRoute } from 'next';
+import { siteUrl } from '@/lib/seo';
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: '*', allow: '/' },
-    sitemap: 'https://skolaroid.com/sitemap.xml',
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/demo/thank-you'],
+      },
+    ],
+    sitemap: siteUrl('/sitemap.xml'),
   };
 }

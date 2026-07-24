@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { PageHero, CtaButtons } from '@/components/site/page-hero';
 import { FinalCtaSection } from '@/components/site/sections/final-cta';
 import { roleSolutions } from '@/lib/site-data';
+import { siteUrl } from '@/lib/seo';
 import { Check } from 'lucide-react';
 
 const roleMap = Object.fromEntries(roleSolutions.map((r) => [r.id, r]));
@@ -17,7 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `For ${r.role}`,
     description: r.summary,
-    alternates: { canonical: `https://skolaroid.com/solutions/${r.id}` },
+    alternates: { canonical: siteUrl(`/solutions/${r.id}`) },
   };
 }
 
